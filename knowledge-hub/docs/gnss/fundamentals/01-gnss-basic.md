@@ -47,9 +47,8 @@ lists them in its settings.
 
 *Source: NASA Scientific Visualization Studio: https://svs.gsfc.nasa.gov/5627/*
 
-| **WHY IT MATTERS** | |
-|---|---|
-| Confirm multi-constellation tracking is turned on in your receiver settings. Don't leave it limited to GPS-only. | |
+!!! tip
+    Confirm multi-constellation tracking is turned on in your receiver settings. Don't leave it limited to GPS-only.
 
 ## 1.2 SBAS: Corrections, Not Extra Satellites
 
@@ -87,7 +86,7 @@ draws a circle around a satellite; a second distance draws another
 circle, crossing the first at two points; a third distance passes
 through only one of those two points — leaving a single answer.
 
-![How a receiver finds a position: time the signal, convert it to a distance, combine distances from several satellites](images/trilateration_steps.svg)
+![How a receiver finds a position: time the signal, convert it to a distance, combine distances from several satellites](../../assets/images/gnss/fundamentals/trilateration_steps.svg)
 *The three steps of trilateration: (1) the receiver times each satellite's signal, (2) it converts that time into a distance, and (3) it combines the distances. A third satellite's circle passes through only one of the two points where the first two circles cross.*
 
 **Why trilateration needs 4 satellites, not 3.**
@@ -200,7 +199,7 @@ whichever your screen shows:
 These are general guidelines, and your project or equipment vendor may
 set its own limit. For 1–3 cm work, aim for green.
 
-!!! warning "Important"
+!!! tip
     Six satellites bunched in one part of the sky can give a *worse* fix than four spread out. Check DOP or the sky plot before logging — not just the satellite count.
 
 If your DOP stays high and won't improve, a later module (Hard Places)
