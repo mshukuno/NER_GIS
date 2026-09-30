@@ -17,12 +17,12 @@ region:
 
 | **Constellation** | **Operated by** | **Global or regional** | **~Satellites** |
 | --- | --- | --- | --- |
-| GPS | United States | Global | 31 |
+| GPS | United States | Global | 32 |
 | GLONASS | Russia | Global | 24 |
 | Galileo | European Union | Global | 28 |
-| BeiDou | China | Global | 44 |
-| QZSS | Japan | Regional | 7 |
-| NavIC | India | Regional | 8 |
+| BeiDou | China | Global | 28 |
+| QZSS | Japan | Regional | 5 |
+| NavIC | India | Regional | 3 |
 
 *Counts above are each constellation's total satellites — not how many
 are visible above your horizon at once. In the open, a modern
