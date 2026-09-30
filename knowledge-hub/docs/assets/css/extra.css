@@ -1,0 +1,224 @@
+/* =========================================================
+   Unofficial Geospatial Knowledge Hub: extra.css
+   ========================================================= */
+
+
+/* ===== Admonitions ===== */
+
+/* Tip: green, thicker left border */
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: #2e7d32;
+  border-width: 0 0 0 .3rem;
+  border-radius: .3rem;
+}
+.md-typeset .tip > .admonition-title,
+.md-typeset .tip > summary {
+  background-color: rgba(46, 125, 50, .12);
+}
+.md-typeset .tip > .admonition-title::before,
+.md-typeset .tip > summary::before {
+  background-color: #2e7d32;
+}
+
+/* Custom type: field-tip (orange, map pin icon) */
+:root {
+  --md-admonition-icon--field-tip: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 11.5A2.5 2.5 0 0 1 9.5 9 2.5 2.5 0 0 1 12 6.5 2.5 2.5 0 0 1 14.5 9 2.5 2.5 0 0 1 12 11.5M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7z"/></svg>');
+  --md-admonition-icon--important: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 13h-2V7h2m0 10h-2v-2h2M12 2A10 10 0 0 0 2 12a10 10 0 0 0 10 10 10 10 0 0 0 10-10A10 10 0 0 0 12 2z"/></svg>');
+}
+
+.md-typeset .admonition.field-tip,
+.md-typeset details.field-tip {
+  border-color: #ef6c00;
+}
+.md-typeset .field-tip > .admonition-title,
+.md-typeset .field-tip > summary {
+  background-color: rgba(239, 108, 0, .1);
+}
+.md-typeset .field-tip > .admonition-title::before,
+.md-typeset .field-tip > summary::before {
+  background-color: #ef6c00;
+  -webkit-mask-image: var(--md-admonition-icon--field-tip);
+  mask-image: var(--md-admonition-icon--field-tip);
+}
+
+/* Custom type: important (purple) */
+.md-typeset .admonition.important,
+.md-typeset details.important {
+  border-color: #7b1fa2;
+}
+.md-typeset .important > .admonition-title,
+.md-typeset .important > summary {
+  background-color: rgba(123, 31, 162, .1);
+}
+.md-typeset .important > .admonition-title::before,
+.md-typeset .important > summary::before {
+  background-color: #7b1fa2;
+  -webkit-mask-image: var(--md-admonition-icon--important);
+  mask-image: var(--md-admonition-icon--important);
+}
+
+
+/* ===== Self-Check ===== */
+.md-typeset .self-check {
+  position: relative;
+  margin: 1.5rem 0;
+  padding: 1.3rem 1.5rem 1rem;
+  background: color-mix(in srgb, var(--md-primary-fg-color) 7%, var(--md-default-bg-color));
+  border: .05rem solid var(--md-default-fg-color--lightest);
+  border-top: .25rem solid var(--md-default-fg-color--lightest);
+  border-radius: .5rem;
+  box-shadow: var(--md-shadow-z1);
+}
+
+/* progress bar (width set by JS) */
+.self-check::after {
+  content: "";
+  position: absolute;
+  top: -.25rem;
+  left: 0;
+  height: .25rem;
+  width: var(--sc-progress, 0%);
+  background: var(--md-primary-fg-color);
+  border-top-left-radius: .5rem;
+  transition: width .3s ease;
+}
+
+.self-check .sc-card[hidden],
+.self-check .sc-explain[hidden] { display: none; }
+
+.self-check .sc-card:not([hidden]),
+.self-check .sc-explain:not([hidden]) { animation: sc-in .3s ease; }
+
+@keyframes sc-in {
+  from { opacity: 0; transform: translateY(.4rem); }
+  to   { opacity: 1; transform: none; }
+}
+
+/* question */
+.md-typeset .sc-card > p:first-child {
+  margin-top: 0;
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+/* options */
+.md-typeset .sc-options {
+  list-style: none;
+  margin: .8rem 0;
+  padding: 0;
+}
+.md-typeset .sc-options li {
+  display: flex;
+  align-items: center;
+  gap: .8rem;
+  list-style: none;
+  margin: .5rem 0;
+  padding: .65rem .9rem;
+  background: var(--md-default-bg-color);
+  border: .075rem solid var(--md-default-fg-color--lightest);
+  border-radius: .4rem;
+  cursor: pointer;
+  transition: transform .15s, border-color .15s, background .15s;
+}
+.md-typeset .sc-options li::before {
+  content: attr(data-key);
+  text-transform: uppercase;
+  flex: 0 0 1.6rem;
+  height: 1.6rem;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  font-size: .7rem;
+  font-weight: 700;
+  background: var(--md-default-fg-color--lightest);
+  color: var(--md-default-fg-color);
+  transition: background .15s, color .15s;
+}
+.md-typeset .sc-card:not([data-done]) .sc-options li:hover,
+.md-typeset .sc-card:not([data-done]) .sc-options li:focus {
+  transform: translateX(.2rem);
+  border-color: var(--md-primary-fg-color);
+  outline: none;
+}
+.md-typeset .sc-card:not([data-done]) .sc-options li:hover::before,
+.md-typeset .sc-card:not([data-done]) .sc-options li:focus::before {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+
+/* answered states */
+.md-typeset .sc-card[data-done] .sc-options li { cursor: default; }
+.md-typeset .sc-card[data-done] .sc-options li:not(.sc-right):not(.sc-wrong) { opacity: .55; }
+.md-typeset .sc-options li.sc-right {
+  background: rgba(46, 125, 50, .12);
+  border-color: #2e7d32;
+}
+.md-typeset .sc-options li.sc-right::before {
+  content: "✓";
+  background: #2e7d32;
+  color: #fff;
+}
+.md-typeset .sc-options li.sc-wrong {
+  background: rgba(198, 40, 40, .12);
+  border-color: #c62828;
+}
+.md-typeset .sc-options li.sc-wrong::before {
+  content: "✕";
+  background: #c62828;
+  color: #fff;
+}
+
+/* explanation */
+.md-typeset .sc-explain {
+  margin-top: .8rem;
+  padding: .7rem 1rem;
+  background: var(--md-default-bg-color);
+  border-left: .2rem solid var(--md-primary-fg-color);
+  border-radius: 0 .3rem .3rem 0;
+  font-size: .8rem;
+}
+.md-typeset .sc-explain::before {
+  content: "Explanation";
+  display: block;
+  margin-bottom: .2rem;
+  font-size: .65rem;
+  font-weight: 700;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--md-primary-fg-color);
+}
+.md-typeset .sc-explain > p:last-child { margin-bottom: 0; }
+
+/* navigation */
+.sc-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+  padding-top: .8rem;
+  border-top: .05rem solid var(--md-default-fg-color--lightest);
+}
+.sc-count {
+  padding: .15rem .7rem;
+  border-radius: 1rem;
+  background: var(--md-default-bg-color);
+  font-size: .7rem;
+  font-weight: 600;
+}
+.sc-btn {
+  font: inherit;
+  font-size: .75rem;
+  padding: .35rem 1rem;
+  border: .075rem solid var(--md-primary-fg-color);
+  border-radius: 2rem;
+  background: none;
+  color: var(--md-primary-fg-color);
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.sc-btn:hover:not(:disabled) {
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+.sc-btn:disabled { opacity: .3; cursor: default; }
