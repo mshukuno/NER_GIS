@@ -35,13 +35,13 @@ nav:
     - gnss/index.md
     - Fundamentals for Accurate Data Collection:
         - gnss/fundamentals/index.md
-        - GNSS Basics: gnss/fundamentals/01-gnss-basic.md
-        - Where Errors Come From: gnss/fundamentals/02-where-errors-come-from.md
-        - Precise Is Not Accurate: gnss/fundamentals/03-precise-is-not-accurate.md
-        - Same Place, Different Numbers: gnss/fundamentals/04-same-place-different-numbers.md
-        - Corrections: gnss/fundamentals/05-corrections.md
-        - Hard Places: gnss/fundamentals/06-hard-places.md
-        - Planning for Post-Processing: gnss/fundamentals/07-planning-for-post-processing.md
+        - 1. GNSS Basics: gnss/fundamentals/01-gnss-basic.md
+        - 2. Where Errors Come From: gnss/fundamentals/02-where-errors-come-from.md
+        - 3. Precise Is Not Accurate: gnss/fundamentals/03-precise-is-not-accurate.md
+        - 4. Same Place, Different Numbers: gnss/fundamentals/04-same-place-different-numbers.md
+        - 5. Corrections: gnss/fundamentals/05-corrections.md
+        - 6. Hard Places: gnss/fundamentals/06-hard-places.md
+        - 7. Planning for Post-Processing: gnss/fundamentals/07-planning-for-post-processing.md
   - ArcGIS Pro:
       - arcgis-pro/index.md
   - Cartography:
