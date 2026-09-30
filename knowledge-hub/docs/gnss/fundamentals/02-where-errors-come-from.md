@@ -1,10 +1,10 @@
 # Module 2 — Where Errors Come From
 
-*Read time: 9–12 minutes*
+_Read time: 9–12 minutes_
 
 **By the end of this module, you can:** name the main sources of GNSS
 error, explain what ground control corrects versus what a reference
-(base) station corrects, sort each error into *shared* or *local* to
+(base) station corrects, sort each error into _shared_ or _local_ to
 predict whether a correction can remove it, and name the three kinds
 of reference station you might use in the field.
 
@@ -47,9 +47,9 @@ conditions.
 distort a signal so much as block or weaken it outright, reducing the
 satellite count and geometry you learned to check in Module 1.
 
-*Each of these seven sources adds its own small piece to your final
+_Each of these seven sources adds its own small piece to your final
 position error; a real-world fix is the sum of all seven at once, not
-just one.*
+just one._
 
 ## 2.2 Ground Control: Why Clock and Orbit Errors Aren't Zero Already
 
@@ -141,10 +141,10 @@ ionospheric and tropospheric delay.
 reference station anywhere can see or correct it): multipath, receiver
 noise, and signal obstruction.
 
-*A base station's correction cancels the error two receivers share
+_A base station's correction cancels the error two receivers share
 from the same satellite through the same sky; it has no way to touch
 an error that happens only inside or right next to one specific
-antenna.*
+antenna._
 
 This distinction is the whole reason correction methods — DGNSS, RTK,
 PPP, PPK — work at all, and it's also their shared limit: every one of
@@ -154,28 +154,105 @@ actually do about a difficult multipath or obstruction environment is
 covered in Module 5 (Hard Places).** This module is only about
 recognizing which category an error falls into.
 
-| **WHY IT MATTERS** | |
-|---|---|
-| Before assuming a correction service will fix a bad reading, ask which of the seven sources is behind it. A correction can only remove what you and a reference station share — no method, however good, corrects multipath, receiver noise, or obstruction on its own. | |
+| **WHY IT MATTERS**                                                                                                                                                                                                                                                      |     |
+| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --- |
+| Before assuming a correction service will fix a bad reading, ask which of the seven sources is behind it. A correction can only remove what you and a reference station share — no method, however good, corrects multipath, receiver noise, or obstruction on its own. |     |
 
 ### Self-Check
 
 Try explaining each of these out loud before moving on. If one doesn't
 come easily, that's the concept to revisit:
 
-1. Seven sources account for most GNSS error: satellite clock, orbit,
-   ionospheric delay, tropospheric delay, multipath, receiver noise,
-   and signal obstruction.
-2. A reference (or base) station knows its own exact position and
-   compares that to its live GNSS reading to find its own error.
-3. A correction can only remove an error the reference station also
-   experiences — that's the shared/local distinction.
-4. Multipath, receiver noise, and obstruction are local; no reference
-   station, however good, can see or correct them.
-5. Ground control corrects each satellite's own broadcast clock and
-   orbit, roughly every couple of hours, for every receiver on Earth
-   at once — a reference station corrects what's left over after
-   that, live, for receivers near it specifically.
-6. A reference station can be a public/CORS station, a commercial
-   network, or your own second receiver — different sources, same
-   job: comparing a known position to a live GNSS reading.
+<div class="self-check" markdown>
+
+<div class="sc-card" data-answer="b" markdown>
+**Q1. Which set lists the sources of GNSS error covered in this module?**
+
+<ul class="sc-options">
+  <li data-key="a">a. Satellite clock, orbit, ionospheric delay, WAAS, multipath</li>
+  <li data-key="b">b. Satellite clock, orbit, ionospheric delay, tropospheric delay, multipath, receiver noise, signal obstruction</li>
+  <li data-key="c">c. Base station error, radio interference, DOP, multipath, receiver noise</li>
+  <li data-key="d">d. Datum mismatch, antenna height, multipath, ground control, orbit</li>
+</ul>
+
+<div class="sc-explain" markdown>
+Seven sources account for most field error. WAAS is a correction system, DOP is a geometry measure, and datum and antenna height are setup errors (Module 3).
+</div>
+</div>
+
+<div class="sc-card" data-answer="c" markdown>
+**Q2. What does a reference (base) station do?**
+
+<ul class="sc-options">
+  <li data-key="a">a. Adds extra satellites to your count</li>
+  <li data-key="b">b. Uploads corrected clock and orbit data to the satellites</li>
+  <li data-key="c">c. Compares its known position to its live GNSS reading and reports the difference as error</li>
+  <li data-key="d">d. Removes multipath from your antenna</li>
+</ul>
+
+<div class="sc-explain" markdown>
+Because it already knows the right answer, whatever its live reading differs by is error, and nearby receivers can apply that same correction.
+</div>
+</div>
+
+<div class="sc-card" data-answer="a" markdown>
+**Q3. Why can a correction remove some errors but not others?**
+
+<ul class="sc-options">
+  <li data-key="a">a. It can only remove an error the reference station also experiences</li>
+  <li data-key="b">b. It can only remove errors smaller than 1 cm</li>
+  <li data-key="c">c. It can only remove errors that happen at night</li>
+  <li data-key="d">d. It can only remove errors the receiver has already logged</li>
+</ul>
+
+<div class="sc-explain" markdown>
+This is the shared/local distinction: a base station cancels what it and your rover both see, and nothing else.
+</div>
+</div>
+
+<div class="sc-card" data-answer="d" markdown>
+**Q4. Which three errors are local, so no reference station can correct them?**
+
+<ul class="sc-options">
+  <li data-key="a">a. Satellite clock error, orbit error, ionospheric delay</li>
+  <li data-key="b">b. Tropospheric delay, ionospheric delay, orbit error</li>
+  <li data-key="c">c. Satellite clock error, multipath, receiver noise</li>
+  <li data-key="d">d. Multipath, receiver noise, signal obstruction</li>
+</ul>
+
+<div class="sc-explain" markdown>
+These happen only at your antenna and its surroundings. Clock, orbit, and (when the reference is close) atmospheric errors are shared.
+</div>
+</div>
+
+<div class="sc-card" data-answer="b" markdown>
+**Q5. How does ground control differ from a reference station?**
+
+<ul class="sc-options">
+  <li data-key="a">a. Ground control corrects your rover live; a reference station corrects the satellites</li>
+  <li data-key="b">b. Ground control corrects each satellite's broadcast clock and orbit for all receivers, roughly every couple of hours; a reference station corrects what's left, live, for nearby receivers</li>
+  <li data-key="c">c. They are the same thing under different names</li>
+  <li data-key="d">d. Ground control is only used with PPK; a reference station is only used with RTK</li>
+</ul>
+
+<div class="sc-explain" markdown>
+They are two layers. Ground control's correction rides on the normal satellite signal, and the reference station handles the residual.
+</div>
+</div>
+
+<div class="sc-card" data-answer="c" markdown>
+**Q6. Which of these is NOT a kind of reference station?**
+
+<ul class="sc-options">
+  <li data-key="a">a. Public / CORS station</li>
+  <li data-key="b">b. Commercial network</li>
+  <li data-key="c">c. A satellite in a GNSS constellation</li>
+  <li data-key="d">d. Your own second receiver</li>
+</ul>
+
+<div class="sc-explain" markdown>
+The three real types do the same job (compare a known position to a live reading) and differ in who runs them and how long they stay in place. Satellites are not reference stations.
+</div>
+</div>
+
+</div>

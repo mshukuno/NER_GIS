@@ -256,13 +256,128 @@ PPK adds its own planning on top of the general practices above. In order:
 
 ### Self-Check
 
-Try explaining each of these out loud before moving on. If one doesn't come easily, that's the concept to revisit:
+Pick the best answer for each question. If one surprises you, revisit that section.
 
-1. Reaching cm accuracy takes two things together: removing the shared error, and measuring distance with the wave's phase instead of just its arrival time — RTK and PPK do both; DGNSS only does the first.
-2. Each method trades something different for accuracy — RTK trades infrastructure, PPP trades time, PPK trades office effort — and each fits different projects.
-3. PPP's accuracy isn't one number — it depends directly on how long you sit at the point, from a free ~5-minute Galileo HAS fix to an hours-long free post-processed session.
-4. Float vs. fixed applies to RTK and PPK (both count whole wavelengths); PPP converges instead, and DGNSS doesn't do this step at all.
-5. A raw log collected during RTK can be reprocessed with PPK afterward — but only if raw logging was turned on, and not every device/software combination supports it.
-6. Some field-day planning holds regardless of method — season, open sky, accuracy target, a known point, storage/battery, and backing up raw logs — decided before you leave the office.
-7. RTK adds its own planning on top of that — confirming the correction source is up and running, mobile connectivity, and a base/CORS-aware fallback (PPK by default, post-processed PPP only with no base access).
-8. PPK adds its own planning too — confirming base/CORS coverage and status, raw logging support, a matching logging interval, planned overlap with the base window, and a clear plan for who processes the data afterward.
+<div class="self-check" markdown>
+
+<div class="sc-card" data-answer="c" markdown>
+**Q1. What two things must happen together to reach centimeter accuracy?**
+
+<ul class="sc-options">
+  <li data-key="a">a. Track more constellations and lower your DOP</li>
+  <li data-key="b">b. Use a longer antenna pole and a faster radio link</li>
+  <li data-key="c">c. Remove the shared error, and measure distance with the wave's phase instead of just its arrival time</li>
+  <li data-key="d">d. Remove multipath, and remove receiver noise</li>
+</ul>
+
+<div class="sc-explain" markdown>
+RTK, PPK, and PPP do both. DGNSS only removes the shared error, so its timing-based measurement limits it to about a meter. Local error (multipath, noise) is on you, not the method.
+</div>
+</div>
+
+<div class="sc-card" data-answer="b" markdown>
+**Q2. Which pairing correctly states what each method trades for accuracy?**
+
+<ul class="sc-options">
+  <li data-key="a">a. RTK trades time, PPP trades infrastructure, PPK trades office effort</li>
+  <li data-key="b">b. RTK trades infrastructure, PPP trades time, PPK trades office effort</li>
+  <li data-key="c">c. RTK trades office effort, PPP trades infrastructure, PPK trades time</li>
+  <li data-key="d">d. All three trade only time</li>
+</ul>
+
+<div class="sc-explain" markdown>
+RTK needs a live link and a base or network, PPP needs convergence time at each point, and PPK needs planning in the field and processing back in the office.
+</div>
+</div>
+
+<div class="sc-card" data-answer="d" markdown>
+**Q3. A team plans a few minutes of PPP per point on a job that requires 1–3 cm. What is the problem?**
+
+<ul class="sc-options">
+  <li data-key="a">a. PPP cannot be used in the Northeast</li>
+  <li data-key="b">b. PPP measures distance less precisely than RTK</li>
+  <li data-key="c">c. Nothing, since PPP is always centimeter-grade</li>
+  <li data-key="d">d. A short session may only reach about 15–20 cm or worse, so the data shouldn't be logged as centimeter data</li>
+</ul>
+
+<div class="sc-explain" markdown>
+PPP uses the same fine ruler as RTK, but without a nearby base it has to work out the shared error itself, and that takes time. Accuracy depends directly on session length.
+</div>
+</div>
+
+<div class="sc-card" data-answer="a" markdown>
+**Q4. Which methods have a float vs. fixed state?**
+
+<ul class="sc-options">
+  <li data-key="a">a. RTK and PPK, because both count whole wavelengths</li>
+  <li data-key="b">b. PPP and DGNSS</li>
+  <li data-key="c">c. RTK and DGNSS</li>
+  <li data-key="d">d. All four methods</li>
+</ul>
+
+<div class="sc-explain" markdown>
+PPP converges gradually instead of switching from float to fixed, and DGNSS never does the whole-wavelength step because it only uses the timing measurement.
+</div>
+</div>
+
+<div class="sc-card" data-answer="c" markdown>
+**Q5. You ran RTK on a moving platform and now doubt part of the data. When can it be reprocessed as PPK?**
+
+<ul class="sc-options">
+  <li data-key="a">a. Always, since RTK and PPK are the same</li>
+  <li data-key="b">b. Never, since RTK discards the raw data</li>
+  <li data-key="c">c. Only if raw logging was on the whole time, and a base or CORS log covers the same window</li>
+  <li data-key="d">d. Only if the fix was fixed throughout</li>
+</ul>
+
+<div class="sc-explain" markdown>
+RTK and PPK use the same raw measurements, but a gap can't be recovered. Not every device and software combination supports raw logging, so confirm before you count on it.
+</div>
+</div>
+
+<div class="sc-card" data-answer="b" markdown>
+**Q6. Which of these is planning that applies no matter which method you use?**
+
+<ul class="sc-options">
+  <li data-key="a">a. Checking correction age on the controller</li>
+  <li data-key="b">b. Matching the season to the site, choosing open sky, confirming the accuracy target, locating a known point, checking storage and battery, and backing up raw logs</li>
+  <li data-key="c">c. Matching your logging interval to the CORS source</li>
+  <li data-key="d">d. Checking mobile signal at the site</li>
+</ul>
+
+<div class="sc-explain" markdown>
+Correction age and mobile signal are RTK-specific, and logging interval is PPK-specific. The general practices are decided before you leave the office.
+</div>
+</div>
+
+<div class="sc-card" data-answer="d" markdown>
+**Q7. Before an RTK day at a site with weak cell coverage and a network mountpoint 35 km away, what should you decide in advance?**
+
+<ul class="sc-options">
+  <li data-key="a">a. Nothing, since RTK will adapt once you arrive</li>
+  <li data-key="b">b. Switch to DGNSS, since it needs no link</li>
+  <li data-key="c">c. Use post-processed PPP, since it is always the best fallback</li>
+  <li data-key="d">d. A fallback: PPK by default if a base or CORS log is available, and post-processed PPP only if there is no base access at all</li>
+</ul>
+
+<div class="sc-explain" markdown>
+A long baseline and a weak link both push a site toward the fallback. PPK reaches the same 1–3 cm target as RTK, which PPP can't match. Also confirm your device can log raw.
+</div>
+</div>
+
+<div class="sc-card" data-answer="a" markdown>
+**Q8. Which set covers PPK-specific planning?**
+
+<ul class="sc-options">
+  <li data-key="a">a. Confirm base/CORS coverage and status, confirm raw logging support, match the logging interval, plan overlap with the base window, and know who processes the data</li>
+  <li data-key="b">b. Confirm the NTRIP account, cell signal, and correction age</li>
+  <li data-key="c">c. Confirm the datum, antenna height, and known point</li>
+  <li data-key="d">d. Confirm DOP, satellite count, and sky plot</li>
+</ul>
+
+<div class="sc-explain" markdown>
+The office step can only use what was recorded, so gaps in overlap or missing raw data can't be fixed later. Option b is RTK planning, c is setup checks (Module 3), and d is geometry checks (Module 1).
+</div>
+</div>
+
+</div>

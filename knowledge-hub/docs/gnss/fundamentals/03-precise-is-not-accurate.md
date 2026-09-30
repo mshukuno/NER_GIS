@@ -139,21 +139,98 @@ carries the same unverified assumption.
 
 ### Self-Check
 
-Try explaining each of these out loud before moving on. If one doesn't
-come easily, that's the concept to revisit:
+Pick the best answer for each question. If one surprises you, revisit that section.
 
-1. Accuracy is closeness to the truth; precision is consistency
-   between measurements — a reading can have one without the other.
-2. DOP and the ±cm estimate both describe how consistent your solution
-   is, not whether it's correct.
-3. Base coordinate mismatches, antenna height errors, and
-   ellipsoid/orthometric height mixups can all produce a stable, wrong
-   reading.
-4. A constant horizontal offset points to setup; a vertical-only
-   offset points to height; a scattered offset points to local
-   conditions, not setup.
-5. A known-point check is the only step that actually confirms your
-   setup is correct — not just internally consistent — and it belongs
-   before every survey, not just when something looks off.
-6. If no monument is nearby, OPUS can turn a few hours of static
-   logging into your own reusable known point.
+<div class="self-check" markdown>
+
+<div class="sc-card" data-answer="c" markdown>
+**Q1. Five repeated readings land within 1 cm of each other, but all sit 1.5 m from the true position. The receiver is:**
+
+<ul class="sc-options">
+  <li data-key="a">a. Accurate but not precise</li>
+  <li data-key="b">b. Neither accurate nor precise</li>
+  <li data-key="c">c. Precise but not accurate</li>
+  <li data-key="d">d. Both accurate and precise</li>
+</ul>
+
+<div class="sc-explain" markdown>
+Precision is consistency between measurements; accuracy is closeness to the truth. A tight cluster in the wrong place is precise but not accurate.
+</div>
+</div>
+
+<div class="sc-card" data-answer="b" markdown>
+**Q2. What do DOP and the ±cm estimate on your controller tell you?**
+
+<ul class="sc-options">
+  <li data-key="a">a. How close your position is to the true position</li>
+  <li data-key="b">b. How consistent the solution is, not whether it is correct</li>
+  <li data-key="c">c. Whether your datum and antenna height are right</li>
+  <li data-key="d">d. Whether your base coordinates were entered correctly</li>
+</ul>
+
+<div class="sc-explain" markdown>
+Both numbers come from the receiver's own math and are never checked against anything outside it, so they can't detect setup errors.
+</div>
+</div>
+
+<div class="sc-card" data-answer="d" markdown>
+**Q3. Which of these can produce a stable, confident-looking, but wrong position?**
+
+<ul class="sc-options">
+  <li data-key="a">a. A base coordinate mismatch only</li>
+  <li data-key="b">b. An antenna height error only</li>
+  <li data-key="c">c. An ellipsoid/orthometric height mix-up only</li>
+  <li data-key="d">d. Any of the three</li>
+</ul>
+
+<div class="sc-explain" markdown>
+All three are setup errors: mistakes in what you told the receiver, not in what the satellites are doing, so the screen looks just as clean as it would for a correct setup.
+</div>
+</div>
+
+<div class="sc-card" data-answer="a" markdown>
+**Q4. Every point you log is shifted about 1.5 m in roughly the same direction horizontally, and heights match. What does the pattern suggest first?**
+
+<ul class="sc-options">
+  <li data-key="a">a. A base coordinate or datum mismatch</li>
+  <li data-key="b">b. An antenna height entry error</li>
+  <li data-key="c">c. Multipath at each site</li>
+  <li data-key="d">d. An ellipsoid/orthometric height mix-up</li>
+</ul>
+
+<div class="sc-explain" markdown>
+A constant horizontal offset points to the setup. A vertical-only offset points to height, and an offset that varies point to point points to local conditions. These patterns are heuristics; only a known-point check confirms the cause.
+</div>
+</div>
+
+<div class="sc-card" data-answer="b" markdown>
+**Q5. Why is the known-point check the only real check on your setup?**
+
+<ul class="sc-options">
+  <li data-key="a">a. It gives the receiver more satellites to work with</li>
+  <li data-key="b">b. It is the one step that compares your reading to a position from outside the receiver</li>
+  <li data-key="c">c. It lowers your DOP</li>
+  <li data-key="d">d. It only needs to be done if a reading looks suspicious</li>
+</ul>
+
+<div class="sc-explain" markdown>
+Everything else on the screen is the receiver grading its own homework. Do the check before every project and every morning on multi-day work, not just when something looks off.
+</div>
+</div>
+
+<div class="sc-card" data-answer="c" markdown>
+**Q6. No published monument is near your site. What can you do?**
+
+<ul class="sc-options">
+  <li data-key="a">a. Skip the check, since the ±cm estimate is good enough</li>
+  <li data-key="b">b. Use the receiver's average of a few minutes of readings as the known position</li>
+  <li data-key="c">c. Log several hours of static data at a stable, open-sky point and submit it to OPUS for a reusable known point</li>
+  <li data-key="d">d. Enter the coordinates from a map app as the known position</li>
+</ul>
+
+<div class="sc-explain" markdown>
+OPUS returns a precise published position tied to the national reference system, which you can reuse for every future check.
+</div>
+</div>
+
+</div>

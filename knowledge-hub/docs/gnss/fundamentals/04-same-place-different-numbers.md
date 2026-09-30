@@ -1,8 +1,8 @@
 ---
-title: "Module 3B: Same Place, Different Numbers"
+title: "Module 4: Same Place, Different Numbers"
 ---
 
-# Module 3B: Same Place, Different Numbers
+# Module 4: Same Place, Different Numbers
 
 *Read time: 7–10 minutes*
 
@@ -12,7 +12,7 @@ velocity model are; name the frame each of your position sources
 delivers; and recognize when two sources disagree because of the frame,
 not the satellites.
 
-## 3B.1 Two Good Answers That Disagree
+## 4.1 Two Good Answers That Disagree
 
 **Start with a puzzle.** You set up on a survey monument in
 Pennsylvania. Network RTK agrees with the published coordinates to
@@ -26,7 +26,7 @@ attached to ground that moves. This is the "precise but not accurate"
 problem from Module 3, with one new twist: this offset grows every
 year.
 
-## 3B.2 The Ruler: Reference Frames
+## 4.2 The Ruler: Reference Frames
 
 **Picture yourself on a moving train.** Measure the distance from your
 seat to the door, and you get the same number every day, because you and
@@ -48,7 +48,7 @@ Both rulers are legitimate. Trouble starts only when data measured with
 one is compared with data measured with the other. **Our standard in PA
 and MA is NAD83(2011).**
 
-## 3B.3 The Date: Epochs
+## 4.3 The Date: Epochs
 
 **A photo of a moving train only tells you where it was if you know when
 the photo was taken.** Coordinates in a moving frame work the same way.
@@ -67,7 +67,7 @@ target — and it gets larger each year.
 NAD83(2011), its dot stays in place. In a global frame, its dot moves a
 little further from the 2010 position each year.*
 
-## 3B.4 Converting Between Frames
+## 4.4 Converting Between Frames
 
 **A fixed shift can't close a gap that keeps growing.** A shift that's
 correct this year is off by about 2 cm next year, and by more the year
@@ -92,7 +92,7 @@ the version number, and the velocity model it uses.]
 |---|---|
 | A receiver can be fixed, show ±1 cm, and still be 50 cm to 1 m off if two frames are mixed. The ± number can't see it. Only a known-point check, repeated with each position source you use, catches a frame mismatch. | |
 
-## 3B.5 PA11 and MA11 Are Not Pennsylvania and Massachusetts
+## 4.5 PA11 and MA11 Are Not Pennsylvania and Massachusetts
 
 You may see **NAD83(PA11)** and **NAD83(MA11)** listed next to
 NAD83(2011) in software menus. The letters are a coincidence.
@@ -102,7 +102,7 @@ Northern Mariana Islands). Pennsylvania and Massachusetts both sit on
 the North American plate. Choosing PA11 or MA11 here adds a large,
 plate-motion-sized error. **In PA and MA, choose NAD83(2011).**
 
-## 3B.6 Which Frame Is Each Source In?
+## 4.6 Which Frame Is Each Source In?
 
 Each position source arrives in its own frame. Knowing which one tells
 you whether a transformation is needed before the data reach your map.
@@ -128,7 +128,7 @@ basemap but sit shifted against an older layer usually mean a missing
 or extra transformation somewhere in that chain, or a layer stored in a
 different datum.
 
-## 3B.7 Where to Check It
+## 4.7 Where to Check It
 
 Before collecting, confirm that three settings agree on NAD83(2011):
 the coordinate system and correction source in Zeno Connect, the
@@ -139,17 +139,98 @@ from Module 3: a known-point check, repeated for each source.
 
 ### Self-Check
 
-Try explaining each of these out loud before moving on. If one doesn't
-come easily, that's the concept to revisit:
+Pick the best answer for each question. If one surprises you, revisit that section.
 
-1. A reference frame is the ruler for coordinates. NAD83(2011) moves
-   with the North American plate; global frames (ITRF, WGS84) don't.
-2. An epoch is the date coordinates are valid for. NAD83(2011) is
-   defined at epoch 2010.00.
-3. A fixed shift can't fix a frame mismatch because the gap grows each
-   year; a time-dependent transformation uses the collection date and
-   a velocity model.
-4. PA11 and MA11 are Pacific and Mariana plate frames. In PA and MA,
-   use NAD83(2011).
-5. A fixed, ±1 cm reading can still be 50 cm to 1 m off if frames are
-   mixed — only a known-point check with each source reveals it.
+<div class="self-check" markdown>
+
+<div class="sc-card" data-answer="b" markdown>
+**Q1. What is the difference between NAD83(2011) and a global frame such as ITRF or WGS84?**
+
+<ul class="sc-options">
+  <li data-key="a">a. NAD83(2011) is less precise than global frames</li>
+  <li data-key="b">b. NAD83(2011) moves with the North American plate, so a fence post keeps nearly the same coordinates; global frames don't, so its coordinates change every year</li>
+  <li data-key="c">c. Global frames are only used outside the U.S.</li>
+  <li data-key="d">d. NAD83(2011) is fixed to the Earth as a whole; global frames move with the plate</li>
+</ul>
+
+<div class="sc-explain" markdown>
+Both are legitimate rulers. NAD83(2011) is the view from inside the train, and global frames are the view from the platform, with the continent sliding underneath at roughly 2 cm per year.
+</div>
+</div>
+
+<div class="sc-card" data-answer="c" markdown>
+**Q2. What does "epoch 2010.00" mean for NAD83(2011)?**
+
+<ul class="sc-options">
+  <li data-key="a">a. The year the receiver was manufactured</li>
+  <li data-key="b">b. The date your survey was collected</li>
+  <li data-key="c">c. The date (1 January 2010) the coordinates are valid for</li>
+  <li data-key="d">d. The version number of the correction software</li>
+</ul>
+
+<div class="sc-explain" markdown>
+An epoch is the timestamp on the photo. In a moving frame, coordinates only mean something if you know the date they are valid for.
+</div>
+</div>
+
+<div class="sc-card" data-answer="a" markdown>
+**Q3. Why can't a single fixed shift fix a frame mismatch?**
+
+<ul class="sc-options">
+  <li data-key="a">a. The gap grows each year, so a shift that is right this year is off by about 2 cm next year</li>
+  <li data-key="b">b. The gap changes with the weather</li>
+  <li data-key="c">c. Fixed shifts are not allowed in Field Maps</li>
+  <li data-key="d">d. The gap is different for every receiver model</li>
+</ul>
+
+<div class="sc-explain" markdown>
+A time-dependent transformation uses the collection date, plus a velocity model of ground motion in mm per year, to work out the right shift.
+</div>
+</div>
+
+<div class="sc-card" data-answer="d" markdown>
+**Q4. A colleague says to pick NAD83(PA11) because the project is in Pennsylvania. What should you do?**
+
+<ul class="sc-options">
+  <li data-key="a">a. Agree, since PA stands for Pennsylvania</li>
+  <li data-key="b">b. Pick NAD83(MA11) instead, since it is closer to the Northeast</li>
+  <li data-key="c">c. Use whichever one the basemap uses</li>
+  <li data-key="d">d. Use NAD83(2011), because PA11 is the Pacific plate frame and MA11 is the Mariana plate frame</li>
+</ul>
+
+<div class="sc-explain" markdown>
+The letters are a coincidence. Pennsylvania and Massachusetts both sit on the North American plate, and choosing PA11 or MA11 adds a large, plate-motion-sized error.
+</div>
+</div>
+
+<div class="sc-card" data-answer="b" markdown>
+**Q5. Network RTK agrees with a monument to 2 cm, but SBAS on the same spot is more than half a meter off. Both show a small ± on screen. What is the most likely reason?**
+
+<ul class="sc-options">
+  <li data-key="a">a. The SBAS receiver has a hardware fault</li>
+  <li data-key="b">b. The two sources are in different frames, and SBAS is in a global frame that was not transformed to NAD83(2011)</li>
+  <li data-key="c">c. There are too few satellites</li>
+  <li data-key="d">d. Multipath at the monument</li>
+</ul>
+
+<div class="sc-explain" markdown>
+The ± number can't see a frame mismatch. A constant offset of 50 cm to 1 m in the Northeast that grows each year is the frame signature.
+</div>
+</div>
+
+<div class="sc-card" data-answer="c" markdown>
+**Q6. How do you catch a frame mismatch before it ends up in your dataset?**
+
+<ul class="sc-options">
+  <li data-key="a">a. Check that the ± estimate is small</li>
+  <li data-key="b">b. Check that the satellite count is high</li>
+  <li data-key="c">c. Confirm each setting agrees on NAD83(2011), then do a known-point check with each position source you use</li>
+  <li data-key="d">d. Only check when points look shifted against the basemap</li>
+</ul>
+
+<div class="sc-explain" markdown>
+The ± number and satellite count can't detect a frame mismatch, and the known-point check is the one step that compares against a position from outside the receiver. Repeat it for every source, since each can arrive in a different frame.
+</div>
+</div>
+
+</div>

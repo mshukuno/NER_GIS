@@ -179,19 +179,98 @@ from NCEI.
 
 ### Self-Check
 
-Try explaining each of these out loud before moving on. If one doesn't
-come easily, that's the concept to revisit:
+Pick the best answer for each question. If one surprises you, revisit that section.
 
-1. A CORS station records reference data all day at a known position,
-   separately from your work; processing software uses it to correct
-   your recording.
-2. RINEX is the common format both files need; CORS data already comes
-   in it, and your own log may need converting.
-3. RINEX files are organized by day of year and use GPS time (close to
-   UTC), not local time.
-4. Before processing, check the station's status, recording rate,
-   distance, and coverage of your collection time — and download within
-   30 days.
-5. You can only correct what you recorded: a CORS gap can be covered
-   by another station, but a gap in your own recording can't be
-   recovered.
+<div class="self-check" markdown>
+
+<div class="sc-card" data-answer="b" markdown>
+**Q1. What does a CORS station do for PPK?**
+
+<ul class="sc-options">
+  <li data-key="a">a. It streams corrections to your receiver while you work</li>
+  <li data-key="b">b. It records reference data all day at a known position, separately from your work, and processing software uses it to correct your recording</li>
+  <li data-key="c">c. It adds extra satellites to your count</li>
+  <li data-key="d">d. It removes multipath from your antenna</li>
+</ul>
+
+<div class="sc-explain" markdown>
+You never connect to it in the field. Because its exact position is known, the software can work out how far off the signals were at each moment and remove that shared error from your data.
+</div>
+</div>
+
+<div class="sc-card" data-answer="d" markdown>
+**Q2. Which statement about RINEX is correct?**
+
+<ul class="sc-options">
+  <li data-key="a">a. Both your log and the CORS file always arrive in RINEX</li>
+  <li data-key="b">b. RINEX is a brand of receiver</li>
+  <li data-key="c">c. Neither your log nor the CORS file ever needs converting</li>
+  <li data-key="d">d. It is the common format both files need; CORS data already comes as RINEX, and your own log may need converting</li>
+</ul>
+
+<div class="sc-explain" markdown>
+Receivers of different brands save raw data in their own formats, so processing software needs a common one. Your device how-to guide covers whether your log needs converting.
+</div>
+</div>
+
+<div class="sc-card" data-answer="a" markdown>
+**Q3. You collected from 8:00 a.m. to noon Eastern Daylight Time on day 265. Which CORS data should you download?**
+
+<ul class="sc-options">
+  <li data-key="a">a. Day 265, covering 12:00–16:00 in GPS time (close to UTC)</li>
+  <li data-key="b">b. Day 265, covering 8:00–12:00</li>
+  <li data-key="c">c. Day 264, covering 12:00–16:00</li>
+  <li data-key="d">d. Any day, since the time doesn't matter</li>
+</ul>
+
+<div class="sc-explain" markdown>
+RINEX files are organized by day of year and use GPS time, not local time. An evening session can spill into the next UTC day, and so into the next day's file.
+</div>
+</div>
+
+<div class="sc-card" data-answer="c" markdown>
+**Q4. Before processing, what should you check about a CORS station?**
+
+<ul class="sc-options">
+  <li data-key="a">a. Only that it is the closest station</li>
+  <li data-key="b">b. Only that it belongs to NGS</li>
+  <li data-key="c">c. Its status, recording rate, distance, and whether the file covers your collection time, and download within 30 days</li>
+  <li data-key="d">d. Only its brand of receiver</li>
+</ul>
+
+<div class="sc-explain" markdown>
+After about 30 days NGS thins its daily files to one record every 30 seconds, which is too sparse for a moving platform. The downloaded file is always the final check.
+</div>
+</div>
+
+<div class="sc-card" data-answer="d" markdown>
+**Q5. Your CORS station had a 40-minute outage, and separately your own receiver stopped logging for 40 minutes. What can be recovered?**
+
+<ul class="sc-options">
+  <li data-key="a">a. Neither gap</li>
+  <li data-key="b">b. Only your own gap, by drawing a straight line across it</li>
+  <li data-key="c">c. Both gaps, using the next nearest station</li>
+  <li data-key="d">d. The CORS gap, using the next nearest station; your own gap can't be recovered</li>
+</ul>
+
+<div class="sc-explain" markdown>
+Another station recorded the same satellites, so it can cover the CORS gap. Nobody else was recording at your antenna. Drawing a straight line across your gap is a guess, not a measurement.
+</div>
+</div>
+
+<div class="sc-card" data-answer="a" markdown>
+**Q6. What should you do before leaving the site on a PPK day?**
+
+<ul class="sc-options">
+  <li data-key="a">a. Confirm the file exists, copy it to a second device, name it by site, date, and receiver, and keep notes on antenna height, start and stop times, and interruptions</li>
+  <li data-key="b">b. Confirm the RTK fix is fixed</li>
+  <li data-key="c">c. Download the CORS file from the field</li>
+  <li data-key="d">d. Nothing, since problems can be fixed in the office</li>
+</ul>
+
+<div class="sc-explain" markdown>
+A missing file or a gap discovered during processing means a return trip. A two-minute check before you leave is the only time you can still fix it.
+</div>
+</div>
+
+</div>
