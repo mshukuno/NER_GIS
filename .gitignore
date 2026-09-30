@@ -1,0 +1,13 @@
+# MkDocs build output (includes Lunr and the search index)
+knowledge-hub/site/
+
+# Local Python environment
+.venv/
+
+# Python bytecode
+__pycache__/
+*.pyc
+
+# OS junk
+.DS_Store
+Thumbs.db
