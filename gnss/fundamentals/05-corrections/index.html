@@ -1,0 +1,1775 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../04-same-place-different-numbers/">
+      
+      
+        <link rel="next" href="../06-hard-places/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>5. Corrections - Unofficial Geospatial Knowledge Hub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-4-corrections-what-each-method-buys-costs-and-breaks" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Unofficial Geospatial Knowledge Hub" class="md-header__button md-logo" aria-label="Unofficial Geospatial Knowledge Hub" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Unofficial Geospatial Knowledge Hub
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5. Corrections
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  GNSS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../arcgis-pro/index.md" class="md-tabs__link">
+          
+  
+  
+    
+  
+  ArcGIS Pro
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cartography/index.md" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Cartography
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Unofficial Geospatial Knowledge Hub" class="md-nav__button md-logo" aria-label="Unofficial Geospatial Knowledge Hub" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Unofficial Geospatial Knowledge Hub
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNSS
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GNSS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals for Accurate Data Collection
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals for Accurate Data Collection
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-gnss-basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. GNSS Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../02-where-errors-come-from/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Where Errors Come From
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-precise-is-not-accurate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Precise Is Not Accurate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-same-place-different-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Same Place, Different Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Corrections
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Corrections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-what-it-takes-to-reach-centimeter-accuracy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 What It Takes to Reach Centimeter Accuracy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-correction-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Correction Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Correction Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#421-dgnss-differential-gnss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.1 DGNSS (Differential GNSS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#422-ppp-precise-point-positioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.2 PPP (Precise Point Positioning)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#423-rtk-real-time-kinematic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.3 RTK (Real-Time Kinematic)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2.3 RTK (Real-Time Kinematic)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4231-single-base-rtk-baserover" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.3.1 Single-Base RTK (Base/Rover)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4232-network-rtk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.3.2 Network RTK
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#424-ppk-post-processed-kinematic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.4 PPK (Post-Processed Kinematic)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-float-vs-fixed-has-the-receiver-locked-a-precise-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Float vs. Fixed: Has the Receiver Locked a Precise Answer?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-baseline-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Baseline Length
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-good-practice-planning-for-a-reliable-field-day" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Good Practice: Planning for a Reliable Field Day
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5 Good Practice: Planning for a Reliable Field Day">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#451-planning-for-a-reliable-rtk-day" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5.1 Planning for a Reliable RTK Day
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#452-planning-for-a-reliable-ppk-day" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5.2 Planning for a Reliable PPK Day
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-hard-places/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Hard Places
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-planning-for-post-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Planning for Post-Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ArcGIS Pro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ArcGIS Pro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../arcgis-pro/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cartography
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cartography
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cartography/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41-what-it-takes-to-reach-centimeter-accuracy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.1 What It Takes to Reach Centimeter Accuracy
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42-correction-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2 Correction Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2 Correction Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#421-dgnss-differential-gnss" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.1 DGNSS (Differential GNSS)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#422-ppp-precise-point-positioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.2 PPP (Precise Point Positioning)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#423-rtk-real-time-kinematic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.3 RTK (Real-Time Kinematic)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.2.3 RTK (Real-Time Kinematic)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#4231-single-base-rtk-baserover" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.3.1 Single-Base RTK (Base/Rover)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4232-network-rtk" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.3.2 Network RTK
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#424-ppk-post-processed-kinematic" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.2.4 PPK (Post-Processed Kinematic)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43-float-vs-fixed-has-the-receiver-locked-a-precise-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.3 Float vs. Fixed: Has the Receiver Locked a Precise Answer?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44-baseline-length" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.4 Baseline Length
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#45-good-practice-planning-for-a-reliable-field-day" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5 Good Practice: Planning for a Reliable Field Day
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4.5 Good Practice: Planning for a Reliable Field Day">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#451-planning-for-a-reliable-rtk-day" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5.1 Planning for a Reliable RTK Day
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#452-planning-for-a-reliable-ppk-day" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4.5.2 Planning for a Reliable PPK Day
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#self-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="module-4-corrections-what-each-method-buys-costs-and-breaks">Module 4: Corrections — What Each Method Buys, Costs, and Breaks</h1>
+<p><em>Read time: 12–14 minutes</em></p>
+<p><strong>By the end of this module, you can:</strong> explain why RTK (Real-Time Kinematic), PPK (Post-Processed Kinematic), and PPP (Precise Point Positioning) reach centimeter accuracy at all, choose the right method for a given project, log data the right way for each, tell float from fixed, and plan a field day so RTK problems are avoided rather than fixed on the fly.</p>
+<h2 id="41-what-it-takes-to-reach-centimeter-accuracy">4.1 What It Takes to Reach Centimeter Accuracy</h2>
+<p>Getting from raw GNSS (2–10 m) down to centimeters means correction methods have to solve two problems — plus live with a third one they can't touch at all.</p>
+<p><strong>Problem one: the shared error.</strong> Satellite clocks drift slightly, and the atmosphere bends the signal by an amount that changes with weather and time of day. Both errors are <em>shared</em>: you and a base station (or a global correction service) are looking through roughly the same sky, so whatever is throwing the base off is probably throwing you off too.</p>
+<p>A nearby base station, or a global precise-orbit product (used by PPP), tells your receiver almost exactly how far off those numbers are right now, and that amount gets subtracted out.</p>
+<p><strong>Problem two: how precisely you measure your distance to each satellite.</strong> DGNSS (Differential GNSS) measures distance the simple way — timing how long the signal took to arrive, like reading a stopwatch that only ticks once a second.</p>
+<p>RTK, PPK, and PPP all measure something much finer: the shape of the radio wave itself as it arrives (its "phase"), which is like switching to a stopwatch that ticks a thousand times a second. That's a far more precise ruler — precise to a small fraction of the signal's wavelength (about 19 cm).</p>
+<p><strong>The one piece no correction method touches: local error.</strong> This is the same shared-vs-local split from Module 2, and it's worth seeing again here because it's the reason solving problems one and two isn't the whole story.</p>
+<p>Multipath (the signal bouncing off a nearby surface) and receiver noise (small electronic jitter in the hardware) happen at your own antenna, at your own spot, at the moment you're standing there. No base station or global correction service — however close, however good — ever experiences what's happening right at your antenna, so no correction message can subtract it out.</p>
+<p>This is the one factor that's on <em>you</em>, not the method: open sky, antenna placement away from reflective surfaces, a stable mount. It holds no matter how close or well-placed your base is — a nearby base cancels the shared error faster (4.4), but it has no effect on local error at all.</p>
+<p>Put the pieces together — subtract out the shared error, measure what's left with the fine ruler, and keep local error small yourself with good field practice — and RTK, PPK, and PPP all reach centimeters. That's the ceiling all three are built to reach; local error is the floor they're built on top of.</p>
+<p><strong>So why does PPP need so much more time than RTK?</strong> Not because it measures distance any less precisely — it uses the exact same fine ruler from problem two. The difference is entirely in problem one.</p>
+<p>RTK and PPK have a base station standing nearby, so the shared error cancels out almost instantly. PPP has no base at all — it has to work that same shared error out for itself, from a global orbit/clock model, without anything nearby to compare against.</p>
+<p>That's a slower way to solve problem one, which is why PPP needs minutes to hours instead of seconds, and why its real-world accuracy depends so heavily on how long you sit at the point (4.2.2). The ceiling is identical; reaching it just takes longer.</p>
+<p>DGNSS never switches to the fine ruler — it only ever does the timing-based measurement from problem two.</p>
+<p>So even with the shared error perfectly removed and local error kept small, its distance measurement itself is only good to about a meter. No amount of correction fixes that; it's a limit built into how DGNSS measures distance in the first place.</p>
+<h2 id="42-correction-methods">4.2 Correction Methods</h2>
+<p>Four methods add a correction layer on top of raw GNSS, and each solves the two problems from 4.1 differently — DGNSS only ever solves problem one; RTK, PPK, and PPP solve both, which is what unlocks centimeters. Here's how they compare before we go through each in turn:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Method</strong></th>
+<th><strong>What it needs</strong></th>
+<th><strong>Live or post?</strong></th>
+<th><strong>Accuracy</strong></th>
+<th><strong>What fails first</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DGNSS</td>
+<td>A nearby beacon or SBAS signal</td>
+<td>Live</td>
+<td>~1–3 m</td>
+<td>Range from the beacon (radio) — SBAS itself rarely fails</td>
+</tr>
+<tr>
+<td>PPP</td>
+<td>Global precise orbit/clock products, or Galileo HAS, or none</td>
+<td>Live (after convergence) or post</td>
+<td>~2 cm–2 m, depending on service and session length (see 4.2.2)</td>
+<td>Convergence time — cut a session short and accuracy drops with it</td>
+</tr>
+<tr>
+<td>RTK</td>
+<td>A base station + a live link (radio or NTRIP)</td>
+<td>Live</td>
+<td>1–3 cm</td>
+<td>The link — line-of-sight, cell signal, or battery</td>
+</tr>
+<tr>
+<td>PPK</td>
+<td>A rover log + a base/CORS log, combined later</td>
+<td>Post</td>
+<td>1–3 cm</td>
+<td>The overlap — if the logs don't cover the same window, nothing to combine</td>
+</tr>
+</tbody>
+</table>
+<p><em>Four correction methods arranged by what they need, what they deliver, and where they're most likely to let you down.</em></p>
+<h3 id="421-dgnss-differential-gnss">4.2.1 DGNSS (Differential GNSS)</h3>
+<p><strong>How it works:</strong> a nearby beacon or an SBAS satellite compares its own known position to its GNSS fix, broadcasts the difference, and your receiver applies it — the timing-only correction described in 4.1.</p>
+<p><strong>Accuracy:</strong> ~1–3 m.</p>
+<p><strong>Use it when:</strong> you need better than raw GNSS but survey accuracy isn't the goal — general mapping, asset location, navigation.</p>
+<p><strong>Don't use it when:</strong> the project has a 1–3 cm requirement. A meter of error is built into the method; no amount of care in the field changes that.</p>
+<p><strong>Example:</strong> logging the rough location of a storm drain for an inventory map, where "within a couple of meters" is fine.</p>
+<h3 id="422-ppp-precise-point-positioning">4.2.2 PPP (Precise Point Positioning)</h3>
+<p><strong>How it works:</strong> the receiver computes its own position using global precise satellite orbit and clock products, with no base station — trading a nearby reference for convergence time.</p>
+<p><strong>Accuracy:</strong> this is the one method where accuracy depends heavily on how long you sit at the point, so there's no single number:</p>
+<ul>
+<li><strong>A few minutes</strong> (subscription real-time PPP, or Galileo HAS): roughly decimeter-level, ~15–20 cm to ~40 cm.</li>
+<li><strong>5–30 minutes</strong>, fully converged (subscription real-time PPP): ~2–4 cm.</li>
+<li><strong>Several hours</strong>, post-processed against free IGS data: ~2–5 cm, the best PPP can typically do.</li>
+</ul>
+<p>Cutting a session short doesn't just add noise — it directly trades away accuracy, so match the session length to what the project actually needs.</p>
+<p><strong>Subscription vs. free:</strong> real-time PPP that converges in minutes and holds a live fix is usually a <strong>paid subscription</strong> (Trimble RTX, Leica SmartLink, NovAtel TerraStar).</p>
+<p>There's also a free real-time option worth knowing about: <strong>Galileo HAS</strong> (High Accuracy Service), broadcast at no cost from Galileo satellites. It converges in about 5 minutes and targets roughly 20 cm horizontal / 40 cm vertical — not centimeter-grade, but a genuinely free middle ground between a subscription and hours of post-processing.</p>
+<p>Post-processed PPP (logging raw, then processing against free IGS data afterward) is always free, regardless of which live option you do or don't have.</p>
+<p><strong>Use it when:</strong> no base or network access is available, and the tolerance can accept the accuracy your session length actually delivers.</p>
+<p><strong>Don't use it when:</strong> the project needs a firm 1–3 cm — a short session may only reach 15–20 cm or worse, and that shouldn't be logged as centimeter data. Also don't reach for post-processed PPP as a same-day RTK fallback if a base or CORS log is available for the site — see 4.5.1, step 3.</p>
+<p><strong>Example:</strong> a single remote point far outside RTK network and CORS coverage, with no base station to deploy.</p>
+<h3 id="423-rtk-real-time-kinematic">4.2.3 RTK (Real-Time Kinematic)</h3>
+<p><strong>How it works:</strong> a base station at a known point streams live carrier-phase corrections; your rover resolves the ambiguity (4.3) and locks a centimeter fix you can confirm on the spot.</p>
+<p><strong>Accuracy:</strong> 1–3 cm, live — the default method for this project's work, because it's the only method that lets you verify the fix before leaving the point.</p>
+<p><strong>Not the same idea as a DGNSS beacon (4.2.1).</strong> Both compare a known point to a GNSS reading and send you the difference, so it's tempting to think of single-base RTK as "DGNSS with your own beacon." It isn't — the two correct different kinds of measurements.</p>
+<p>A DGNSS beacon corrects the same <strong>timing-based</strong> measurement covered in 4.2.1, which tops out around a meter no matter how good the correction is. Single-base RTK corrects a <strong>carrier-phase</strong> measurement instead — the far finer, wave-based reading from 4.1 — which is why the same basic idea (correct against a known point) delivers meters in one case and centimeters in the other.</p>
+<p><strong>The measurement sets the ceiling; the correction only gets you up to that ceiling, not past it.</strong></p>
+<p><strong>NTRIP and RTCM, in plain terms.</strong> These two names show up together but aren't the same thing. <strong>RTCM</strong> (Radio Technical Commission for Maritime Services, the group that defined it) is the correction <em>message</em> itself — the standardized format a base station's correction is written in, whatever carries it.</p>
+<p><strong>NTRIP</strong> (Networked Transport of RTCM via Internet Protocol) is a delivery route: the internet "pipe" that carries an RTCM message from a base or network to your rover, the way a streaming app is the pipe for a movie rather than the movie itself. NTRIP only changes how a correction reaches you, not what it says or how accurate it is.</p>
+<p><strong>Two flavors, one method.</strong> RTK comes in two forms, depending on where the base's known position comes from and how the correction travels to you. Both are still RTK underneath — same carrier-phase measurement, same ambiguity resolution, same float/fixed states (4.3). The difference is entirely in the setup.</p>
+<h4 id="4231-single-base-rtk-baserover">4.2.3.1 Single-Base RTK (Base/Rover)</h4>
+<p><strong>How it works:</strong> you bring two receivers — one stays fixed at a surveyed or published point for the whole session as the <strong>base</strong>; the other is the <strong>rover</strong> you carry to log points.</p>
+<p><strong>Delivery:</strong> the correction travels over a <strong>radio link</strong> — a UHF radio modem, built into or attached to each receiver — not Bluetooth. Bluetooth is a separate, short-range link between each receiver and its own controller or tablet; it has nothing to do with carrying the correction from base to rover.</p>
+<p>Radio range is the binding limit here: typically a few km with clear line-of-sight, less through trees or hills — well inside the atmosphere-driven range covered next, so the radio itself usually runs out before shared atmosphere does.</p>
+<p><strong>Accuracy:</strong> 1–3 cm, and it holds fast and reliably close to the base. Plan on solid fixes within roughly <strong>10–20 km</strong>.</p>
+<p>Fixes are still often achievable out to 30–50 km, but take longer to lock and are more prone to dropping to float, for the reason covered in 4.4 — the shared atmosphere between you and the base diverges with distance. <em>(Rule of thumb — flag for your GNSS specialist or provider to confirm, since the exact number varies by receiver.)</em></p>
+<p><strong>Use it when:</strong> neither CORS nor a commercial network covers the site — remote work outside any network's reach — or you want the base close enough to guarantee the fastest possible fix, tighter than any fixed public or commercial station happens to sit.</p>
+<p><strong>Don't use it when:</strong> a network already covers the site. Single-base RTK adds real overhead a network doesn't: a second receiver, someone to set up and survey in the base, and a base whose own position is only as good as the monument or survey-in step behind it — a wrong base coordinate here produces exactly the "constant offset at every point" pattern from Module 3.</p>
+<p>For this organization, Network RTK (4.2.3.2) is the default; reach for single-base only when the site genuinely falls outside network coverage.</p>
+<p><strong>Example:</strong> a remote site with no CORS or commercial network signal, where a project base is set up and surveyed in for the day.</p>
+<h4 id="4232-network-rtk">4.2.3.2 Network RTK</h4>
+<p><strong>How it works:</strong> instead of a physical base you deploy yourself, the correction comes from a network of permanent stations — CORS, a commercial network, or your organization's own — computing a synthesized "virtual" base for wherever you happen to be. No second receiver to deploy or survey in.</p>
+<p><strong>Delivery:</strong> always <strong>NTRIP</strong>, over an internet connection — cell signal or Wi-Fi, connected to a corrections account. NTRIP accounts aren't always paid: many state DOTs and regional agencies run free public NTRIP networks (their own CORS network), and your organization may run its own.</p>
+<p><strong>Accuracy:</strong> 1–3 cm, and it typically holds over a wider area than single-base RTK, since the network synthesizes a nearby virtual base for wherever you are rather than relying on one fixed physical station.</p>
+<p><strong>Use it when:</strong> the site falls within CORS, commercial, or your organization's network coverage — the normal case for this region, and the same coverage this organization already relies on for CORS-based PPK (Module 6). No base to haul, set up, or survey in.</p>
+<p><strong>Don't use it when:</strong> the site is outside every available network's reach, or your mobile device has no signal to carry NTRIP (see 4.5.1, step 2) — either case pushes you back to single-base RTK or another method entirely.</p>
+<p><strong>Example:</strong> setting boundary or utility points on a site with good cell coverage and existing CORS or commercial network reach.</p>
+<p><strong>Log raw, even on a good RTK day — either flavor.</strong> If your link mostly holds but drops occasionally, or you're ever unsure whether a fix was reliable, turn on raw logging alongside RTK.</p>
+<p>It costs nothing in the field — RTK and PPK use the same underlying measurements, RTK just also computes a live answer — and it means any point you're later unsure about can be reprocessed as PPK instead of re-collected.</p>
+<p>Not every field app supports this. Some GNSS data-collection software streams and stores only the finished RTK position, with no option to also record raw observations — so raw logging isn't a setting you can just turn on everywhere.</p>
+<p>Confirm this capability before you count on it: if raw logging matters to a project, choose a device-and-software combination that offers it, so you keep the choice between RTK and later PPK rather than losing it by default.</p>
+<h3 id="424-ppk-post-processed-kinematic">4.2.4 PPK (Post-Processed Kinematic)</h3>
+<p><strong>How it works:</strong> mechanically identical to RTK — a base and rover comparing carrier-phase data — but nothing is streamed live. The rover logs raw data continuously; a base or CORS log covering the same window is combined with it afterward in the office.</p>
+<p><strong>Accuracy:</strong> 1–3 cm.</p>
+<p><strong>How to log it:</strong> turn on raw observation logging on the rover (not just positions — the actual satellite signal data) and set a logging interval that matches what your base or CORS source uses (commonly 1 second).</p>
+<p>Keep the receiver logging continuously for the full session, including travel between points if you're on a moving platform, and note your start and stop times so they can be matched to the base log in the office.</p>
+<p><strong>Use it when:</strong> the link can't be trusted (weather, seasonal or remote sites) or the platform moves continuously (coastal vehicle, drone) — for moving-platform work, PPK is the standard approach, not a fallback.</p>
+<p>It's also the better choice whenever a base or CORS log is available for the site, even as a same-day RTK fallback — see 4.5.1, step 3.</p>
+<p><strong>Don't use it when:</strong> you need to confirm accuracy in the field before leaving — PPK gives you no live readout; a logging gap isn't discovered until the office processes the data.</p>
+<p><strong>A safety net worth knowing:</strong> if you run RTK on a moving platform without realizing PPK was the better call, the data isn't necessarily lost — <em>if</em> raw logging was turned on the whole time. RTK and PPK use the same underlying raw measurements; RTK just also computes a live answer on top of them.</p>
+<p>A raw log collected during an RTK session can be reprocessed with PPK afterward, using a base or CORS log for the same window, exactly as if you'd planned it that way. What can't be recovered is a gap: if raw logging wasn't on, or the receiver was set to log positions only, there's nothing to reprocess.</p>
+<p>That's the practical argument for logging raw by default any time you're on a moving platform, even when you're confident RTK will hold.</p>
+<p><strong>Example:</strong> a coastal survey run from a moving vehicle where RTK would drop in radio or cell dead zones.</p>
+<h2 id="43-float-vs-fixed-has-the-receiver-locked-a-precise-answer">4.3 Float vs. Fixed: Has the Receiver Locked a Precise Answer?</h2>
+<p>RTK and PPK's centimeter accuracy comes from the fine ruler in 4.1 — measuring the wave's phase. To use that ruler, the receiver first has to figure out something more basic: exactly how many <em>whole wavelengths</em> fit between it and each satellite.</p>
+<p>Each wavelength is only about 19 cm, so the receiver can measure the leftover fraction of a wavelength very precisely — but on its own, that fraction doesn't tell it whether it's 3 wavelengths and a bit away, or 300,003 wavelengths and a bit away. It has to solve for that whole number first, by comparing signals from many satellites over a few seconds to a couple of minutes.</p>
+<ul>
+<li><strong>Float</strong> = the receiver hasn't pinned down that whole number yet, so it's estimating instead of counting exactly — accurate to tens of centimeters to a couple of meters.</li>
+<li><strong>Fixed</strong> = it has pinned the number down exactly, unlocking the full centimeter-level accuracy.</li>
+</ul>
+<p>Your screen tells you which state you're in — check the differential or solution-type status before you trust a point, not just the ±cm number next to it. This applies to <strong>both RTK and PPK</strong>, since both rely on the same phase measurement and whole-number count.</p>
+<p>PPP doesn't have this same on/off state — it <em>converges</em> gradually instead (4.2.2). DGNSS never does this step at all, since it only uses the simple timing measurement from 4.1.</p>
+<table>
+<thead>
+<tr>
+<th><strong>WHY IT MATTERS</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fixed is necessary but not sufficient. Under bad conditions — multipath, a marginal link, poor geometry — a receiver can lock onto the <em>wrong</em> whole number and still show "fixed": confident, precise, and wrong. A fix tells you the receiver settled on an answer; it doesn't tell you the answer was correct. That's a separate check (the known-point check), not something the fixed/float status can catch on its own.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="44-baseline-length">4.4 Baseline Length</h2>
+<p><strong>Baseline</strong> is simply the straight-line distance between the base station and your rover (your receiver). It matters because of the same shared-error idea from 4.1: the correction only helps with what you and the base experience in common.</p>
+<p>Close to the base — say, a few km — you're both looking through nearly the same slice of atmosphere, so the correction cancels almost all of that shared error immediately, and the fix locks fast.</p>
+<p>As the baseline grows longer, that atmosphere diverges between you and the base, the correction gets less complete, and the fix takes longer to resolve. On a long enough baseline, the leftover error can be too large for the receiver to ever pin down the exact whole-wavelength count from 4.3 — so instead of just taking longer, it never resolves at all, and the receiver is stuck reporting <strong>float</strong> (the lower-accuracy estimate from 4.3) indefinitely.</p>
+<p>This is why a receiver that fixes instantly next to its own base can sit on float for minutes — or never fix — when connected to a network base tens of kilometers away.</p>
+<h2 id="45-good-practice-planning-for-a-reliable-field-day">4.5 Good Practice: Planning for a Reliable Field Day</h2>
+<p>Most field problems are avoided, not fixed — by deciding a few things before you ever leave the office. Some of this holds no matter which method you're using that day:</p>
+<p><strong>Match the season to the site.</strong> For canopy or otherwise obstructed sites, schedule for leaf-off months where possible. A bare canopy lets far more open sky through than full summer foliage, so you avoid the obstruction instead of fighting it once you're there.</p>
+<p><strong>Choose the most open-sky location available, and keep the antenna away from reflective surfaces.</strong> Water, metal roofs, vehicles, and chain-link fences are common multipath sources — set up away from them whenever the project allows it, rather than fighting the resulting noise later.</p>
+<p><strong>Set the accuracy target the project actually needs.</strong> Confirm whether 1–3 cm is genuinely required before assuming a live-link method is mandatory for that site. A looser tolerance opens up simpler, more reliable options.</p>
+<p><strong>Locate a known point near the site beforehand.</strong> Find a nearby survey monument through CORS or your organization's monument map before you leave, so the known-point check is ready to go on arrival instead of something you're searching for once you're on site.</p>
+<p><strong>Confirm your device has enough storage and battery for the day.</strong> This matters most if you're logging raw data alongside your session — raw observation logs are larger than position-only logs, and a moving-platform survey can mean logging continuously for hours, including travel between points.</p>
+<p><strong>Back up raw logs before leaving the field, whatever method you used.</strong> Even on a day that went smoothly with a live fix the whole time, a backed-up raw log gives you the option to reprocess a point later if anything about it turns out to be in doubt.</p>
+<h3 id="451-planning-for-a-reliable-rtk-day">4.5.1 Planning for a Reliable RTK Day</h3>
+<p>RTK adds its own planning on top of the general practices above. In order:</p>
+<p><strong>1. Confirm your NTRIP source, its distance, and that it's actually running, in advance.</strong> Look up which mountpoint (the specific NTRIP connection point for a station or network) or base you'll be connecting to for that site and how far it is. Roughly 10–20 km is the comfortable range; beyond that, expect slower fixes and more time spent on float.</p>
+<p>NTRIP corrections come from the same kind of network PPK draws base data from — a state DOT network, a commercial network, or NGS/university CORS stations — just delivered live instead of downloaded afterward. That means the same failure applies: if the source station or mountpoint is down for maintenance or has an outage, RTK has nothing to correct against.</p>
+<p>Check the provider's status page or outage notices for that mountpoint before you leave. If a site falls outside the comfortable range, or the source is flagged as down, treat it as a candidate for the fallback in step 3 rather than assuming RTK will hold once you arrive.</p>
+<p><strong>2. Confirm your mobile device will actually have a signal at the site.</strong> NTRIP corrections travel over the internet connection on your phone or tablet, not the GNSS receiver itself — cell signal, Wi-Fi, or a satellite communicator/hotspot if you're carrying one.</p>
+<p>A correct, nearby NTRIP mountpoint doesn't help if the device streaming it has no signal: that's exactly what produces a fluctuating or repeatedly dropping fix, separate from anything about the base or the sky.</p>
+<p>Check cell coverage for the site beforehand (a coverage map, or a call to someone who's worked there); if the area is a known dead zone, plan for a satellite communicator as your connection, or treat the site as another fallback candidate in step 3.</p>
+<p><strong>3. Decide the fallback strategy before you go — PPK, live PPP, or post-processed PPP?</strong> For any site flagged in steps 1–2 as likely to struggle (long baseline, weak cell coverage), check base/CORS availability for that site first.</p>
+<p>If a base or CORS log is available — the normal case in this region — default to <strong>PPK</strong>: it reaches the same 1–3 cm target as RTK for the same field effort (log raw, process later), which post-processed PPP can't match.</p>
+<p>Reserve <strong>post-processed PPP</strong> for the rare site with no base or CORS coverage at all, since that's the one situation where it has an advantage — no base station required. <strong>Live PPP</strong> (subscription, or the free Galileo HAS) is worth choosing instead of either when the accuracy target allows something looser and you want a same-day answer without any base dependency.</p>
+<p><strong>4. Choose GNSS hardware and software that actually support that fallback.</strong> Confirm the device-and-app combination you're bringing can do what step 3 calls for. Not every setup supports raw logging, so pick equipment where the fallback is genuinely available on the day — not something you discover you don't have once you need it.</p>
+<p><strong>One on-site check worth knowing, regardless of planning:</strong> your controller shows whether corrections are actually arriving, usually as a "correction age" number (seconds since the last update received) or a link status indicator.</p>
+<p>A connection that still <em>looks</em> active but whose correction age keeps climbing instead of resetting every second or two is the real sign that corrections have stopped — the link icon alone can lag behind what's actually happening.</p>
+<h3 id="452-planning-for-a-reliable-ppk-day">4.5.2 Planning for a Reliable PPK Day</h3>
+<p>PPK adds its own planning on top of the general practices above. In order:</p>
+<p><strong>1. Confirm base or CORS coverage for the site, in advance.</strong> This organization relies on CORS stations rather than deploying a second receiver as a base, so before the day, check two things about the station you plan to use. First, its baseline distance from your site — how far away it sits — since a shorter distance means you and the station are looking through nearly the same atmosphere, giving a stronger correction; a long distance weakens it. Second, check the station's current status: confirm it isn't flagged for an outage or scheduled maintenance, and that it isn't reporting degraded or coarse correction data instead of its normal full-precision output. A station that's technically running but putting out a lower-quality signal can cause just as much trouble as one that's down entirely.</p>
+<p><strong>2. Confirm your GNSS receiver and software can actually log raw data.</strong> Not every GNSS receiver or field app supports this — some only stream and store the finished position, with no option to record the raw satellite observations PPK needs to combine with a base log later. Confirm this capability on your specific device-and-software combination before you count on PPK for the day; finding out it can't log raw only after you're back in the office means redoing the whole session.</p>
+<p><strong>3. Match your logging interval to your base or CORS source.</strong> Commonly 1 second. A mismatched interval can complicate — or block — combining the two logs back in the office.</p>
+<p><strong>4. Plan your session's start and stop times to guarantee overlap with the base log window.</strong> Your rover's logging window has to sit fully inside the base or CORS log's coverage — a gap can't be recovered later. If the station has a known outage or maintenance window, treat that as a reason to shift your schedule or pick a different source.</p>
+<p><strong>5. Confirm whoever processes the data knows the workflow before the day, not after.</strong> On this team, the person who collects the data usually also processes it — so make sure that's a workflow you're comfortable running (combining rover and base logs) before you're relying on it after a full day in the field.</p>
+<p><strong>One on-site check worth knowing, regardless of planning:</strong> confirm logging is still active periodically through the day. A receiver that silently stopped logging looks identical to one that's still running, and that gap isn't discovered until someone tries to process the data afterward.</p>
+<h3 id="self-check">Self-Check</h3>
+<p>Pick the best answer for each question. If one surprises you, revisit that section.</p>
+<div class="self-check">
+<div class="sc-card" data-answer="c">
+<p><strong>Q1. What two things must happen together to reach centimeter accuracy?</strong></p>
+<ul class="sc-options">
+<li data-key="a">a. Track more constellations and lower your DOP</li>
+<li data-key="b">b. Use a longer antenna pole and a faster radio link</li>
+<li data-key="c">c. Remove the shared error, and measure distance with the wave's phase instead of just its arrival time</li>
+<li data-key="d">d. Remove multipath, and remove receiver noise</li>
+</ul>
+<div class="sc-explain">
+<p>RTK, PPK, and PPP do both. DGNSS only removes the shared error, so its timing-based measurement limits it to about a meter. Local error (multipath, noise) is on you, not the method.</p>
+</div>
+</div>
+<div class="sc-card" data-answer="b">
+<p><strong>Q2. Which pairing correctly states what each method trades for accuracy?</strong></p>
+<ul class="sc-options">
+<li data-key="a">a. RTK trades time, PPP trades infrastructure, PPK trades office effort</li>
+<li data-key="b">b. RTK trades infrastructure, PPP trades time, PPK trades office effort</li>
+<li data-key="c">c. RTK trades office effort, PPP trades infrastructure, PPK trades time</li>
+<li data-key="d">d. All three trade only time</li>
+</ul>
+<div class="sc-explain">
+<p>RTK needs a live link and a base or network, PPP needs convergence time at each point, and PPK needs planning in the field and processing back in the office.</p>
+</div>
+</div>
+<div class="sc-card" data-answer="d">
+<p><strong>Q3. A team plans a few minutes of PPP per point on a job that requires 1–3 cm. What is the problem?</strong></p>
+<ul class="sc-options">
+<li data-key="a">a. PPP cannot be used in the Northeast</li>
+<li data-key="b">b. PPP measures distance less precisely than RTK</li>
+<li data-key="c">c. Nothing, since PPP is always centimeter-grade</li>
+<li data-key="d">d. A short session may only reach about 15–20 cm or worse, so the data shouldn't be logged as centimeter data</li>
+</ul>
+<div class="sc-explain">
+<p>PPP uses the same fine ruler as RTK, but without a nearby base it has to work out the shared error itself, and that takes time. Accuracy depends directly on session length.</p>
+</div>
+</div>
+<div class="sc-card" data-answer="a">
+<p><strong>Q4. Which methods have a float vs. fixed state?</strong></p>
+<ul class="sc-options">
+<li data-key="a">a. RTK and PPK, because both count whole wavelengths</li>
+<li data-key="b">b. PPP and DGNSS</li>
+<li data-key="c">c. RTK and DGNSS</li>
+<li data-key="d">d. All four methods</li>
+</ul>
+<div class="sc-explain">
+<p>PPP converges gradually instead of switching from float to fixed, and DGNSS never does the whole-wavelength step because it only uses the timing measurement.</p>
+</div>
+</div>
+<div class="sc-card" data-answer="c">
+<p><strong>Q5. You ran RTK on a moving platform and now doubt part of the data. When can it be reprocessed as PPK?</strong></p>
+<ul class="sc-options">
+<li data-key="a">a. Always, since RTK and PPK are the same</li>
+<li data-key="b">b. Never, since RTK discards the raw data</li>
+<li data-key="c">c. Only if raw logging was on the whole time, and a base or CORS log covers the same window</li>
+<li data-key="d">d. Only if the fix was fixed throughout</li>
+</ul>
+<div class="sc-explain">
+<p>RTK and PPK use the same raw measurements, but a gap can't be recovered. Not every device and software combination supports raw logging, so confirm before you count on it.</p>
+</div>
+</div>
+<div class="sc-card" data-answer="b">
+<p><strong>Q6. Which of these is planning that applies no matter which method you use?</strong></p>
+<ul class="sc-options">
+<li data-key="a">a. Checking correction age on the controller</li>
+<li data-key="b">b. Matching the season to the site, choosing open sky, confirming the accuracy target, locating a known point, checking storage and battery, and backing up raw logs</li>
+<li data-key="c">c. Matching your logging interval to the CORS source</li>
+<li data-key="d">d. Checking mobile signal at the site</li>
+</ul>
+<div class="sc-explain">
+<p>Correction age and mobile signal are RTK-specific, and logging interval is PPK-specific. The general practices are decided before you leave the office.</p>
+</div>
+</div>
+<div class="sc-card" data-answer="d">
+<p><strong>Q7. Before an RTK day at a site with weak cell coverage and a network mountpoint 35 km away, what should you decide in advance?</strong></p>
+<ul class="sc-options">
+<li data-key="a">a. Nothing, since RTK will adapt once you arrive</li>
+<li data-key="b">b. Switch to DGNSS, since it needs no link</li>
+<li data-key="c">c. Use post-processed PPP, since it is always the best fallback</li>
+<li data-key="d">d. A fallback: PPK by default if a base or CORS log is available, and post-processed PPP only if there is no base access at all</li>
+</ul>
+<div class="sc-explain">
+<p>A long baseline and a weak link both push a site toward the fallback. PPK reaches the same 1–3 cm target as RTK, which PPP can't match. Also confirm your device can log raw.</p>
+</div>
+</div>
+<div class="sc-card" data-answer="a">
+<p><strong>Q8. Which set covers PPK-specific planning?</strong></p>
+<ul class="sc-options">
+<li data-key="a">a. Confirm base/CORS coverage and status, confirm raw logging support, match the logging interval, plan overlap with the base window, and know who processes the data</li>
+<li data-key="b">b. Confirm the NTRIP account, cell signal, and correction age</li>
+<li data-key="c">c. Confirm the datum, antenna height, and known point</li>
+<li data-key="d">d. Confirm DOP, satellite count, and sky plot</li>
+</ul>
+<div class="sc-explain">
+<p>The office step can only use what was recorded, so gaps in overlap or missing raw data can't be fixed later. Option b is RTK planning, c is setup checks (Module 3), and d is geometry checks (Module 1).</p>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../04-same-place-different-numbers/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 4. Same Place, Different Numbers">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                4. Same Place, Different Numbers
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../06-hard-places/" class="md-footer__link md-footer__link--next" aria-label="Next: 6. Hard Places">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                6. Hard Places
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/self-check.js"></script>
+      
+    
+  </body>
+</html>

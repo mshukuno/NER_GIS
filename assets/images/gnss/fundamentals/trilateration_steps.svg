@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 420" width="960" height="420" font-family="Arial, Helvetica, sans-serif">
+<title>How a receiver finds a position: time the signal, convert to distance, combine distances</title>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="14" markerHeight="14" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#444"/></marker><marker id="ar2" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="12" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f5fa8"/></marker></defs>
+<rect width="960" height="420" fill="#ffffff"/>
+<rect x="20" y="20" width="270" height="340" rx="12" fill="#f5f7fa" stroke="#c9d1db" stroke-width="1.5"/>
+<text x="155" y="52" text-anchor="middle" font-size="18" font-weight="700" fill="#1a1a1a">1. Time the signal</text>
+<rect x="345" y="20" width="270" height="340" rx="12" fill="#f5f7fa" stroke="#c9d1db" stroke-width="1.5"/>
+<text x="480" y="52" text-anchor="middle" font-size="18" font-weight="700" fill="#1a1a1a">2. Convert time to distance</text>
+<rect x="670" y="20" width="270" height="340" rx="12" fill="#f5f7fa" stroke="#c9d1db" stroke-width="1.5"/>
+<text x="805" y="52" text-anchor="middle" font-size="18" font-weight="700" fill="#1a1a1a">3. Combine distances</text>
+<line x1="297" y1="190" x2="340" y2="190" stroke="#444" stroke-width="2.5" marker-end="url(#ar)"/>
+<line x1="622" y1="190" x2="665" y2="190" stroke="#444" stroke-width="2.5" marker-end="url(#ar)"/>
+<g transform="translate(75,100) scale(1.1)"><rect x="-9" y="-9" width="18" height="18" rx="2" fill="#1f5fa8"/><rect x="-30" y="-5" width="17" height="10" fill="#7fb0e6" stroke="#1f5fa8"/><rect x="13" y="-5" width="17" height="10" fill="#7fb0e6" stroke="#1f5fa8"/></g>
+<rect x="221" y="285" width="28" height="20" rx="3" fill="#2e7d32"/><rect x="227" y="290" width="16" height="10" fill="#c8e6c9"/>
+<line x1="90" y1="114" x2="222" y2="284" stroke="#1f5fa8" stroke-width="2.5" stroke-dasharray="7 6" marker-end="url(#ar)"/>
+<text x="120" y="98" font-size="14" fill="#1a1a1a">Satellite sends</text><text x="120" y="116" font-size="14" fill="#1a1a1a">a timed signal</text>
+<text x="235" y="332" text-anchor="middle" font-size="14" fill="#1a1a1a">Receiver</text>
+<text x="178" y="190" font-size="15" font-weight="700" fill="#1a1a1a">Travel time</text><text x="178" y="209" font-size="15" fill="#1a1a1a">about 0.07 s</text>
+<rect x="365" y="80" width="230" height="70" rx="8" fill="#ffffff" stroke="#1f5fa8" stroke-width="1.5"/>
+<text x="480" y="106" text-anchor="middle" font-size="15" font-weight="700" fill="#1a1a1a">distance =</text>
+<text x="480" y="130" text-anchor="middle" font-size="15" font-weight="700" fill="#1a1a1a">speed of light × travel time</text>
+<text x="480" y="188" text-anchor="middle" font-size="14" fill="#1a1a1a">300,000 km/s × 0.07 s</text>
+<text x="480" y="212" text-anchor="middle" font-size="18" font-weight="700" fill="#1f5fa8">≈ 21,000 km</text>
+<g transform="translate(400,290) scale(0.9)"><rect x="-9" y="-9" width="18" height="18" rx="2" fill="#1f5fa8"/><rect x="-30" y="-5" width="17" height="10" fill="#7fb0e6" stroke="#1f5fa8"/><rect x="13" y="-5" width="17" height="10" fill="#7fb0e6" stroke="#1f5fa8"/></g>
+<rect x="546" y="280" width="28" height="20" rx="3" fill="#2e7d32"/><rect x="552" y="285" width="16" height="10" fill="#c8e6c9"/>
+<line x1="435" y1="290" x2="540" y2="290" stroke="#1f5fa8" stroke-width="2.5" marker-start="url(#ar2)" marker-end="url(#ar2)"/>
+<text x="490" y="280" text-anchor="middle" font-size="14" fill="#1a1a1a">distance</text>
+<text x="480" y="335" text-anchor="middle" font-size="14" fill="#1a1a1a">One distance per satellite</text>
+<text x="805" y="76" text-anchor="middle" font-size="14" fill="#1a1a1a">Circles meet at one point</text>
+<circle cx="770" cy="165" r="61.0" fill="#1f5fa8" fill-opacity="0.06" stroke="#1f5fa8" stroke-width="2"/>
+<circle cx="842" cy="168" r="59.8" fill="#c2410c" fill-opacity="0.06" stroke="#c2410c" stroke-width="2"/>
+<circle cx="778" cy="270" r="61.3" fill="#7b3fa0" fill-opacity="0.06" stroke="#7b3fa0" stroke-width="2"/>
+<g transform="translate(770,165) scale(0.6)"><rect x="-9" y="-9" width="18" height="18" rx="2" fill="#1f5fa8"/><rect x="-30" y="-5" width="17" height="10" fill="#7fb0e6" stroke="#1f5fa8"/><rect x="13" y="-5" width="17" height="10" fill="#7fb0e6" stroke="#1f5fa8"/></g>
+<text x="730" y="108" text-anchor="end" font-size="14" font-weight="700" fill="#1f5fa8">Sat 1</text>
+<g transform="translate(842,168) scale(0.6)"><rect x="-9" y="-9" width="18" height="18" rx="2" fill="#1f5fa8"/><rect x="-30" y="-5" width="17" height="10" fill="#7fb0e6" stroke="#1f5fa8"/><rect x="13" y="-5" width="17" height="10" fill="#7fb0e6" stroke="#1f5fa8"/></g>
+<text x="896" y="104" text-anchor="middle" font-size="14" font-weight="700" fill="#c2410c">Sat 2</text>
+<g transform="translate(778,270) scale(0.6)"><rect x="-9" y="-9" width="18" height="18" rx="2" fill="#1f5fa8"/><rect x="-30" y="-5" width="17" height="10" fill="#7fb0e6" stroke="#1f5fa8"/><rect x="13" y="-5" width="17" height="10" fill="#7fb0e6" stroke="#1f5fa8"/></g>
+<text x="722" y="330" text-anchor="end" font-size="14" font-weight="700" fill="#7b3fa0">Sat 3</text>
+<line x1="811" y1="221" x2="848" y2="256" stroke="#d32f2f" stroke-width="1.5"/>
+<circle cx="805" cy="215" r="7" fill="#d32f2f" stroke="#fff" stroke-width="2"/>
+<text x="852" y="266" font-size="13" font-weight="700" fill="#d32f2f">Your position</text>
+<text x="480.0" y="395" text-anchor="middle" font-size="14" font-style="italic" fill="#444">Simplified in 2D. Real receivers use 3D spheres and a 4th satellite to solve their own clock error.</text>
+</svg>

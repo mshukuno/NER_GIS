@@ -1,0 +1,1508 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../01-gnss-basic/">
+      
+      
+        <link rel="next" href="../03-precise-is-not-accurate/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>2. Where Errors Come From - Unofficial Geospatial Knowledge Hub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/css/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#module-2-where-errors-come-from" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Unofficial Geospatial Knowledge Hub" class="md-header__button md-logo" aria-label="Unofficial Geospatial Knowledge Hub" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Unofficial Geospatial Knowledge Hub
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. Where Errors Come From
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+    
+  
+  GNSS
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../arcgis-pro/index.md" class="md-tabs__link">
+          
+  
+  
+    
+  
+  ArcGIS Pro
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cartography/index.md" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Cartography
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../about.md" class="md-tabs__link">
+        
+  
+  
+    
+  
+  About
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Unofficial Geospatial Knowledge Hub" class="md-nav__button md-logo" aria-label="Unofficial Geospatial Knowledge Hub" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Unofficial Geospatial Knowledge Hub
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    GNSS
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    GNSS
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+          
+          
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Fundamentals for Accurate Data Collection
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Fundamentals for Accurate Data Collection
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../01-gnss-basic/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. GNSS Basics
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Where Errors Come From
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. Where Errors Come From
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-the-error-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 The Error Sources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-ground-control-why-clock-and-orbit-errors-arent-zero-already" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Ground Control: Why Clock and Orbit Errors Aren't Zero Already
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-what-a-reference-station-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 What a Reference Station Does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-three-kinds-of-reference-station" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Three Kinds of Reference Station
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-which-errors-a-reference-station-can-actually-catch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Which Errors a Reference Station Can Actually Catch
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 Which Errors a Reference Station Can Actually Catch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#self-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../03-precise-is-not-accurate/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Precise Is Not Accurate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../04-same-place-different-numbers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. Same Place, Different Numbers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../05-corrections/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. Corrections
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../06-hard-places/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. Hard Places
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../07-planning-for-post-processing/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. Planning for Post-Processing
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    ArcGIS Pro
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    ArcGIS Pro
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../arcgis-pro/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Cartography
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Cartography
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cartography/index.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    None
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../about.md" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    About
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-the-error-sources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1 The Error Sources
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-ground-control-why-clock-and-orbit-errors-arent-zero-already" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2 Ground Control: Why Clock and Orbit Errors Aren't Zero Already
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-what-a-reference-station-does" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3 What a Reference Station Does
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-three-kinds-of-reference-station" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4 Three Kinds of Reference Station
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-which-errors-a-reference-station-can-actually-catch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5 Which Errors a Reference Station Can Actually Catch
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 Which Errors a Reference Station Can Actually Catch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#self-check" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Self-Check
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="module-2-where-errors-come-from">Module 2 — Where Errors Come From</h1>
+<p><em>Read time: 9–12 minutes</em></p>
+<p><strong>By the end of this module, you can:</strong> name the main sources of GNSS
+error, explain what ground control corrects versus what a reference
+(base) station corrects, sort each error into <em>shared</em> or <em>local</em> to
+predict whether a correction can remove it, and name the three kinds
+of reference station you might use in the field.</p>
+<h2 id="21-the-error-sources">2.1 The Error Sources</h2>
+<p>Before asking what fixes an error, it helps to know exactly what
+you're looking at. Seven sources account for nearly all GNSS error in
+the field:</p>
+<p><strong>Satellite clock error.</strong> A satellite's onboard atomic clock is
+extremely precise, but not perfect — it drifts by tiny fractions of a
+second. Since your receiver turns signal travel time directly into
+distance, even a tiny clock error becomes a real distance error.</p>
+<p><strong>Orbit error (also called ephemeris error).</strong> A satellite's actual
+position in space can differ slightly from the position it broadcasts
+in its own signal. Your receiver calculates distance from that
+broadcast position, so a wrong starting point throws off the whole
+calculation.</p>
+<p><strong>Ionospheric delay.</strong> High in the atmosphere, charged particles slow
+a satellite signal down. The amount of delay changes with solar
+activity, time of day, and how low the satellite sits toward the
+horizon — a satellite near the horizon passes through far more
+ionosphere than one directly overhead.</p>
+<p><strong>Tropospheric delay.</strong> Lower in the atmosphere, ordinary weather —
+temperature, pressure, humidity — slows the signal in a similar way,
+independent of the ionosphere.</p>
+<p><strong>Multipath.</strong> The signal bounces off a nearby surface — water, a
+metal roof, a vehicle, a wall — before reaching your antenna, arriving
+slightly late and distorted.</p>
+<p><strong>Receiver noise.</strong> Small random electronic noise inherent to your
+specific receiver's hardware, present even under perfect sky
+conditions.</p>
+<p><strong>Signal obstruction.</strong> Trees, buildings, and canyon walls don't
+distort a signal so much as block or weaken it outright, reducing the
+satellite count and geometry you learned to check in Module 1.</p>
+<p><em>Each of these seven sources adds its own small piece to your final
+position error; a real-world fix is the sum of all seven at once, not
+just one.</em></p>
+<h2 id="22-ground-control-why-clock-and-orbit-errors-arent-zero-already">2.2 Ground Control: Why Clock and Orbit Errors Aren't Zero Already</h2>
+<p>The first two error sources in 2.1 — satellite clock and orbit error —
+are already being corrected before your receiver ever sees them, just
+not perfectly. Every constellation has a <strong>ground control segment</strong>:
+a network of tracking stations, run by whoever operates that
+constellation (the U.S. Space Force for GPS, equivalent agencies for
+the others), that continuously watches each satellite, works out how
+far its actual clock and orbit have drifted from prediction, and
+uploads an updated correction to the satellite itself.</p>
+<p>The satellite folds that correction into its ongoing broadcast — the
+same signal your receiver already uses for ranging — refreshed roughly
+every couple of hours for GPS. <strong>Every receiver already listening to
+that satellite picks this up automatically:</strong> your rover, a reference
+station, anyone's phone. There's no separate feed to connect to; it
+rides along with the normal signal.</p>
+<p>This is why satellite clock and orbit error are only a few meters,
+not kilometers, even with no correction service running at all —
+ground control already caught most of it. What's left is the gap
+between updates: the correction is a periodic prediction, not a live
+fix, so a small residual drifts back in during the hours before the
+next upload. That residual — plus everything ground control has no
+way to see, like the atmosphere over your specific location — is
+exactly what a reference station exists to catch, covered next.</p>
+<p><strong>Ground control and a reference station are not the same layer.</strong>
+Ground control corrects the satellite's own broadcast, once, for every
+receiver on Earth. A reference station corrects what's left over after
+that, live, for receivers near it specifically. Neither replaces the
+other — RTK and the other correction methods in Module 4 depend on
+both having already happened.</p>
+<h2 id="23-what-a-reference-station-does">2.3 What a Reference Station Does</h2>
+<p>A <strong>reference station</strong> — you'll also hear it called a <strong>base
+station</strong>, and the two terms are used interchangeably in the field —
+is a GNSS receiver sitting at a location whose exact position is
+already known and published in advance. Because it already knows the
+right answer, it compares that known position to what its own live
+GNSS calculation says, moment by moment. Whatever the difference is,
+that's error, and the station broadcasts it (or the raw data needed to
+compute it) so a receiver out in the field can apply the same
+correction to its own reading.</p>
+<h2 id="24-three-kinds-of-reference-station">2.4 Three Kinds of Reference Station</h2>
+<p>A reference station can come from any of three places. All three do
+the identical job from 2.3 — compare a known position to a live GNSS
+reading and report the difference — they differ only in who runs the
+station and how long it stays put.</p>
+<p><strong>Public / CORS.</strong> <strong>CORS</strong> stands for <strong>Continuously Operating
+Reference Station</strong> — a permanent station that runs around the clock
+so individual field teams don't have to set up their own base. In
+practice, "CORS" usually means the free network run by government or
+academic bodies: NGS's national network, university-run stations, and
+many state DOT networks. This is the network your organization mostly
+draws from for PPK's downloaded base data (Module 6).</p>
+<p><strong>Commercial network.</strong> A paid subscription service — Leica SmartNet,
+Trimble VRS, and similar — technically also made of continuously
+operating stations, but usually denser than the public network in
+populated areas. Many commercial networks also synthesize a "virtual"
+nearby station for wherever you happen to be, rather than pointing you
+to one fixed physical station — this is what Module 4 calls <strong>Network
+RTK</strong>.</p>
+<p><strong>Your own second receiver.</strong> Instead of relying on someone else's
+permanent station, you deploy a second GNSS receiver yourself, occupy
+a known point (or survey one in), and use it as a temporary base for
+just that session — a <strong>base/rover</strong> setup. Nothing about it stays
+running after you pack up. Full setup mechanics — the radio link
+between the two receivers, and how it differs from Network RTK — are
+in Module 4.</p>
+<h2 id="25-which-errors-a-reference-station-can-actually-catch">2.5 Which Errors a Reference Station Can Actually Catch</h2>
+<p>A reference station can only report an error it also experiences
+itself. That splits the seven sources into two groups:</p>
+<p><strong>Shared</strong> (a reference station experiences it too): satellite clock
+error, orbit error, and — when the reference is reasonably close —
+ionospheric and tropospheric delay.</p>
+<p><strong>Local</strong> (specific to your exact antenna and surroundings, so no
+reference station anywhere can see or correct it): multipath, receiver
+noise, and signal obstruction.</p>
+<p><em>A base station's correction cancels the error two receivers share
+from the same satellite through the same sky; it has no way to touch
+an error that happens only inside or right next to one specific
+antenna.</em></p>
+<p>This distinction is the whole reason correction methods — DGNSS, RTK,
+PPP, PPK — work at all, and it's also their shared limit: every one of
+them still leaves multipath, receiver noise, and obstruction on the
+table, no matter how good the correction is otherwise. <strong>What to
+actually do about a difficult multipath or obstruction environment is
+covered in Module 5 (Hard Places).</strong> This module is only about
+recognizing which category an error falls into.</p>
+<table>
+<thead>
+<tr>
+<th><strong>WHY IT MATTERS</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Before assuming a correction service will fix a bad reading, ask which of the seven sources is behind it. A correction can only remove what you and a reference station share — no method, however good, corrects multipath, receiver noise, or obstruction on its own.</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="self-check">Self-Check</h3>
+<p>Try explaining each of these out loud before moving on. If one doesn't
+come easily, that's the concept to revisit:</p>
+<div class="self-check">
+<div class="sc-card" data-answer="b">
+<p><strong>Q1. Which set lists the sources of GNSS error covered in this module?</strong></p>
+<ul class="sc-options">
+<li data-key="a">a. Satellite clock, orbit, ionospheric delay, WAAS, multipath</li>
+<li data-key="b">b. Satellite clock, orbit, ionospheric delay, tropospheric delay, multipath, receiver noise, signal obstruction</li>
+<li data-key="c">c. Base station error, radio interference, DOP, multipath, receiver noise</li>
+<li data-key="d">d. Datum mismatch, antenna height, multipath, ground control, orbit</li>
+</ul>
+<div class="sc-explain">
+<p>Seven sources account for most field error. WAAS is a correction system, DOP is a geometry measure, and datum and antenna height are setup errors (Module 3).</p>
+</div>
+</div>
+<div class="sc-card" data-answer="c">
+<p><strong>Q2. What does a reference (base) station do?</strong></p>
+<ul class="sc-options">
+<li data-key="a">a. Adds extra satellites to your count</li>
+<li data-key="b">b. Uploads corrected clock and orbit data to the satellites</li>
+<li data-key="c">c. Compares its known position to its live GNSS reading and reports the difference as error</li>
+<li data-key="d">d. Removes multipath from your antenna</li>
+</ul>
+<div class="sc-explain">
+<p>Because it already knows the right answer, whatever its live reading differs by is error, and nearby receivers can apply that same correction.</p>
+</div>
+</div>
+<div class="sc-card" data-answer="a">
+<p><strong>Q3. Why can a correction remove some errors but not others?</strong></p>
+<ul class="sc-options">
+<li data-key="a">a. It can only remove an error the reference station also experiences</li>
+<li data-key="b">b. It can only remove errors smaller than 1 cm</li>
+<li data-key="c">c. It can only remove errors that happen at night</li>
+<li data-key="d">d. It can only remove errors the receiver has already logged</li>
+</ul>
+<div class="sc-explain">
+<p>This is the shared/local distinction: a base station cancels what it and your rover both see, and nothing else.</p>
+</div>
+</div>
+<div class="sc-card" data-answer="d">
+<p><strong>Q4. Which three errors are local, so no reference station can correct them?</strong></p>
+<ul class="sc-options">
+<li data-key="a">a. Satellite clock error, orbit error, ionospheric delay</li>
+<li data-key="b">b. Tropospheric delay, ionospheric delay, orbit error</li>
+<li data-key="c">c. Satellite clock error, multipath, receiver noise</li>
+<li data-key="d">d. Multipath, receiver noise, signal obstruction</li>
+</ul>
+<div class="sc-explain">
+<p>These happen only at your antenna and its surroundings. Clock, orbit, and (when the reference is close) atmospheric errors are shared.</p>
+</div>
+</div>
+<div class="sc-card" data-answer="b">
+<p><strong>Q5. How does ground control differ from a reference station?</strong></p>
+<ul class="sc-options">
+<li data-key="a">a. Ground control corrects your rover live; a reference station corrects the satellites</li>
+<li data-key="b">b. Ground control corrects each satellite's broadcast clock and orbit for all receivers, roughly every couple of hours; a reference station corrects what's left, live, for nearby receivers</li>
+<li data-key="c">c. They are the same thing under different names</li>
+<li data-key="d">d. Ground control is only used with PPK; a reference station is only used with RTK</li>
+</ul>
+<div class="sc-explain">
+<p>They are two layers. Ground control's correction rides on the normal satellite signal, and the reference station handles the residual.</p>
+</div>
+</div>
+<div class="sc-card" data-answer="c">
+<p><strong>Q6. Which of these is NOT a kind of reference station?</strong></p>
+<ul class="sc-options">
+<li data-key="a">a. Public / CORS station</li>
+<li data-key="b">b. Commercial network</li>
+<li data-key="c">c. A satellite in a GNSS constellation</li>
+<li data-key="d">d. Your own second receiver</li>
+</ul>
+<div class="sc-explain">
+<p>The three real types do the same job (compare a known position to a live reading) and differ in who runs them and how long they stay in place. Satellites are not reference stations.</p>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../01-gnss-basic/" class="md-footer__link md-footer__link--prev" aria-label="Previous: 1. GNSS Basics">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                1. GNSS Basics
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../03-precise-is-not-accurate/" class="md-footer__link md-footer__link--next" aria-label="Next: 3. Precise Is Not Accurate">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                3. Precise Is Not Accurate
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.sections", "navigation.indexes", "navigation.top", "navigation.footer", "search.suggest", "search.highlight", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../javascripts/self-check.js"></script>
+      
+    
+  </body>
+</html>
